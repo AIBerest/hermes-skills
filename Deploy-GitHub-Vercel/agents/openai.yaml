@@ -1,0 +1,4 @@
+﻿interface:
+  display_name: "Deploy GitHub + Vercel"
+  short_description: "Publish local repo to GitHub and deploy to Vercel"
+  default_prompt: "Use $deploy-github-vercel and run /deploy all for this repository."
