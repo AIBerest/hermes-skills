@@ -1,0 +1,5 @@
+interface:
+  display_name: "RF Phones"
+  short_description: "Russian smartphone store workflow"
+  brand_color: "#EF4444"
+  default_prompt: "Use $rf-phones to build a Russian smartphone storefront with real product images and buyer-ready copy."
