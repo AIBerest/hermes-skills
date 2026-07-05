@@ -1,0 +1,22 @@
+{
+  "approvals": {
+    "dangerous_actions": [
+      "money",
+      "dns",
+      "secrets",
+      "grants",
+      "destructive_production",
+      "public_mass_send"
+    ]
+  },
+  "delivery": {
+    "review_pack_required": false,
+    "transport": "none"
+  },
+  "name": "base",
+  "privacy": {
+    "private_operator_rules": false
+  },
+  "profile_version": "1.0",
+  "public_clean": false
+}

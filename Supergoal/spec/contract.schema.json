@@ -1,0 +1,70 @@
+{
+  "$id": "https://hermes.local/chip-supergoal/contract.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "approvals": {
+      "type": "array"
+    },
+    "architecture": {
+      "type": "object"
+    },
+    "compatibility": {
+      "type": "object"
+    },
+    "contract_revision": {
+      "minimum": 1,
+      "type": "integer"
+    },
+    "decisions": {
+      "type": "array"
+    },
+    "delivery": {
+      "type": "object"
+    },
+    "goal": {
+      "type": "object"
+    },
+    "loop": {
+      "type": "object"
+    },
+    "phases": {
+      "minItems": 1,
+      "type": "array"
+    },
+    "profile": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "protocol_version": {
+      "const": "3.0"
+    },
+    "risks": {
+      "type": "array"
+    },
+    "schema_version": {
+      "const": "3.0"
+    },
+    "source_set": {
+      "type": "array"
+    }
+  },
+  "required": [
+    "schema_version",
+    "protocol_version",
+    "contract_revision",
+    "profile",
+    "goal",
+    "source_set",
+    "decisions",
+    "architecture",
+    "loop",
+    "risks",
+    "approvals",
+    "phases",
+    "delivery",
+    "compatibility"
+  ],
+  "title": "chip-supergoal CONTRACT v3",
+  "type": "object"
+}

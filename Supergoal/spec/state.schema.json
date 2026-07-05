@@ -1,0 +1,76 @@
+{
+  "$id": "https://hermes.local/chip-supergoal/state.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "attempt": {
+      "minimum": 0,
+      "type": "integer"
+    },
+    "audit_round": {
+      "minimum": 0,
+      "type": "integer"
+    },
+    "blocker": {
+      "type": [
+        "object",
+        "null"
+      ]
+    },
+    "contract_sha256": {
+      "pattern": "^[a-f0-9]{64}$",
+      "type": "string"
+    },
+    "current_phase_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "goal_id": {
+      "type": "string"
+    },
+    "lifecycle": {
+      "enum": [
+        "DRAFT",
+        "COMPILED",
+        "PLAN_REVIEWED",
+        "PREFLIGHT_GREEN",
+        "READY_TO_DISPATCH",
+        "RUNNING",
+        "RECOVERING",
+        "AUDITING",
+        "WAITING_APPROVAL",
+        "WAITING_EXTERNAL",
+        "HANDOFF",
+        "DONE"
+      ]
+    },
+    "phase_status": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "schema_version": {
+      "const": "3.0"
+    },
+    "state_revision": {
+      "minimum": 0,
+      "type": "integer"
+    }
+  },
+  "required": [
+    "schema_version",
+    "goal_id",
+    "contract_sha256",
+    "state_revision",
+    "lifecycle",
+    "current_phase_id",
+    "phase_status",
+    "attempt",
+    "audit_round"
+  ],
+  "title": "chip-supergoal STATE v3",
+  "type": "object"
+}

@@ -1,0 +1,22 @@
+{
+  "delivery": {
+    "files": [
+      "THINKING.md",
+      "LOOP_DESIGN.md",
+      "ROADMAP.md",
+      "LAUNCH_GOAL.md",
+      "RESEARCH.md"
+    ],
+    "review_pack_required": true,
+    "target": "current-thread",
+    "transport": "telegram"
+  },
+  "extends": "base",
+  "name": "chip-private",
+  "operator": "Chip",
+  "privacy": {
+    "private_operator_rules": true,
+    "public_export_allowed": false
+  },
+  "profile_version": "1.0"
+}

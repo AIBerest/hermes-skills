@@ -1,0 +1,216 @@
+{
+  "catalog_version": "1.0",
+  "invariants": [
+    {
+      "canonical_reference": "SKILL.md",
+      "description": "chip-supergoal plans/compiles packages but does not execute numbered implementation phases or become a production runner.",
+      "id": "INV-BOUNDARY-001",
+      "introduced_by": [
+        "ARCHITECT-PLUS-PLAN"
+      ],
+      "owner": "planner-boundary",
+      "severity_if_broken": "P1",
+      "status": "hard",
+      "tests": [
+        "T-ROOT-BOUNDARY",
+        "T-PROTOCOL-NO-RUNNER"
+      ],
+      "title": "Planner-only boundary"
+    },
+    {
+      "canonical_reference": "references/upstream-goal-compatibility.md",
+      "description": "Production execution remains upstream Hermes /goal / GoalManager; no nested /goal chain or separate production runner.",
+      "id": "INV-GOAL-001",
+      "introduced_by": [
+        "ARCHITECT-PLUS-PLAN"
+      ],
+      "owner": "executor-boundary",
+      "severity_if_broken": "P1",
+      "status": "hard",
+      "tests": [
+        "T-UPSTREAM-COMPAT",
+        "T-LAUNCH-GOAL-SHAPE"
+      ],
+      "title": "Standard Hermes /goal executor"
+    },
+    {
+      "canonical_reference": "references/artifact-boundaries.md",
+      "description": "Exactly one actual SUPERGOAL_GOAL_BODY line exists, in LAUNCH_GOAL.md only.",
+      "id": "INV-LAUNCH-001",
+      "introduced_by": [
+        "INC-TELEGRAM-LAUNCH"
+      ],
+      "owner": "artifact-boundary",
+      "severity_if_broken": "P1",
+      "status": "hard",
+      "tests": [
+        "T-LAUNCH-SINGLE",
+        "T-LOOP-NO-LAUNCH"
+      ],
+      "title": "Single launch surface"
+    },
+    {
+      "canonical_reference": "references/execution-state-machine.md",
+      "description": "SUPERGOAL_PHASE_DONE is a checkpoint; executor continues until audit, real blocker, or terminal completion.",
+      "id": "INV-CONTINUE-001",
+      "introduced_by": [
+        "INC-CONTINUATION"
+      ],
+      "owner": "execution-loop",
+      "severity_if_broken": "P1",
+      "status": "hard",
+      "tests": [
+        "T-PROTOCOL-CONTINUE",
+        "T-E2E-FORCED-YIELD"
+      ],
+      "title": "No courtesy stop at phase boundary"
+    },
+    {
+      "canonical_reference": "references/execution-state-machine.md",
+      "description": "SUPERGOAL_RUN_COMPLETE is valid only after AUDIT_COMPLETE and terminal audit evidence.",
+      "id": "INV-AUDIT-001",
+      "introduced_by": [
+        "INC-FALSE-DONE"
+      ],
+      "owner": "final-audit",
+      "severity_if_broken": "P1",
+      "status": "hard",
+      "tests": [
+        "T-MARKER-PAIR",
+        "T-AUDIT-TERMINAL-GUARD"
+      ],
+      "title": "Completion requires audit first"
+    },
+    {
+      "canonical_reference": "references/rpd-review-gates.md",
+      "description": "RPD findings must mutate artifacts/work or become checked-holds with evidence tier.",
+      "id": "INV-RPD-001",
+      "introduced_by": [
+        "ARCHITECT-PLUS-PLAN"
+      ],
+      "owner": "review-gates",
+      "severity_if_broken": "P1",
+      "status": "hard",
+      "tests": [
+        "T-RPD-MUTATION-GATE",
+        "T-RISK-RPD-MAPPING"
+      ],
+      "title": "RPD is a mutation gate"
+    },
+    {
+      "canonical_reference": "references/telegram-launch-and-delivery.md",
+      "description": "Review/final file delivery gates close only with strict receipt, matching target/files/hashes, and transport ack.",
+      "id": "INV-DELIVERY-001",
+      "introduced_by": [
+        "INC-DELIVERY-RECEIPT"
+      ],
+      "owner": "delivery",
+      "severity_if_broken": "P1",
+      "status": "hard",
+      "tests": [
+        "T-RECEIPT-SCHEMA",
+        "T-FORGED-RECEIPT-REJECTED"
+      ],
+      "title": "Requested delivery requires verifiable receipt"
+    },
+    {
+      "canonical_reference": "references/execution-state-machine.md",
+      "description": "Resume uses package state on disk bound to goal ID and contract digest, not chat memory.",
+      "id": "INV-RECOVERY-001",
+      "introduced_by": [
+        "INC-WRONG-GOAL"
+      ],
+      "owner": "recovery",
+      "severity_if_broken": "P1",
+      "status": "hard",
+      "tests": [
+        "T-STATE-GOAL-ID",
+        "T-PATH-DRIFT-RECOVERY"
+      ],
+      "title": "Resume from disk-bound identity"
+    },
+    {
+      "canonical_reference": "references/execution-state-machine.md",
+      "description": "Local tests, private proof actions, read-only inspections, and requested repo cleanup continue unless a real approval gate is present.",
+      "id": "INV-BLOCKER-001",
+      "introduced_by": [
+        "INC-FAKE-BLOCKER"
+      ],
+      "owner": "blocker-policy",
+      "severity_if_broken": "P1",
+      "status": "hard",
+      "tests": [
+        "T-WEAK-BLOCKER-GUARD",
+        "T-APPROVAL-GATE-BOUNDARY"
+      ],
+      "title": "Routine private/read-only checks are not fake approvals"
+    },
+    {
+      "canonical_reference": "references/dispatch-map.md",
+      "description": "Incident history maps to canonical references, invariant IDs, and regression tests instead of bloating SKILL.md.",
+      "id": "INV-REFERENCE-001",
+      "introduced_by": [
+        "ARCHITECT-PLUS-PLAN"
+      ],
+      "owner": "reference-architecture",
+      "severity_if_broken": "P2",
+      "status": "hard",
+      "tests": [
+        "T-REFERENCE-TAXONOMY",
+        "T-INVARIANT-CATALOG"
+      ],
+      "title": "Reference corpus is cataloged, not root bloat"
+    },
+    {
+      "canonical_reference": "spec/invariant-catalog.json",
+      "description": "Malformed phase/loop fixtures such as Phase 99 of 1, RPD mismatch, one-word loop, cycles, and placeholder commands are rejected by strict v3 validation.",
+      "id": "INV-VALIDATOR-001",
+      "introduced_by": [
+        "A+G-002",
+        "A+G-003"
+      ],
+      "owner": "semantic-validation",
+      "severity_if_broken": "P1",
+      "status": "hard",
+      "tests": [
+        "T-PHASE-99-REJECTED",
+        "T-LOOP-ONE-WORD-REJECTED"
+      ],
+      "title": "Semantic validators reject known malformed packages"
+    },
+    {
+      "canonical_reference": "templates/delivery/package-final-artifacts.sh",
+      "description": "Packaging rejects symlinks, special files, path traversal, and implicit files outside allowlist.",
+      "id": "INV-ARCHIVE-001",
+      "introduced_by": [
+        "A+G-009"
+      ],
+      "owner": "archive-security",
+      "severity_if_broken": "P1",
+      "status": "hard",
+      "tests": [
+        "T-SYMLINK-ESCAPE-REJECTED",
+        "T-ZIP-TRAVERSAL-REJECTED"
+      ],
+      "title": "Final archive cannot escape package root"
+    },
+    {
+      "canonical_reference": "references/research-and-architecture-gates.md",
+      "description": "Research-required contracts cannot compile or validate as strict packages until the research provider gate is satisfied with provider, source, summary, and planning implications evidence; Perplex is preferred unless unavailable.",
+      "id": "INV-RESEARCH-001",
+      "introduced_by": [
+        "ALPHA3-RESEARCH-GATE"
+      ],
+      "owner": "research-gate",
+      "severity_if_broken": "P1",
+      "status": "hard",
+      "tests": [
+        "T-RESEARCH-REQUIRED-BLOCKS",
+        "T-RESEARCH-COMPILE-BLOCKS",
+        "T-RESEARCH-PACKAGE-DRIFT"
+      ],
+      "title": "Perplex-first research gate"
+    }
+  ],
+  "source": "CHIP_SUPERGOAL_ARCHITECT_PLUS_UPGRADE_PLAN-1.md sections 2, 9, 11, 12, 13, 14, 15"
+}

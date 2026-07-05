@@ -1,0 +1,99 @@
+# Generated reference index
+
+Generated from `spec/reference-catalog.json`.
+
+- `references/INDEX.md` — canonical — no invariant owner
+- `references/active-supergoal-skill-review-pause.md` — specialist — no invariant owner
+- `references/architect-plus-lite.md` — specialist — no invariant owner
+- `references/architect-plus-v3-upgrade-execution-lessons.md` — specialist — no invariant owner
+- `references/architecture-decision-supergoal.md` — specialist — no invariant owner
+- `references/artifact-boundaries.md` — canonical — INV-LAUNCH-001
+- `references/artifact-schemas.md` — canonical — no invariant owner
+- `references/auth-oauth-provider-audit.md` — specialist — no invariant owner
+- `references/auth-ux-polish-phase.md` — specialist — no invariant owner
+- `references/bounded-manifest-no-internal-approvals.md` — specialist — no invariant owner
+- `references/category-backed-skill-path-validation.md` — specialist — no invariant owner
+- `references/context-anchor-and-wrong-goal-recovery.md` — incident — no invariant owner
+- `references/core-planning-contract.md` — canonical — no invariant owner
+- `references/dev-history-hardening.md` — specialist — no invariant owner
+- `references/dispatch-map.md` — canonical — INV-REFERENCE-001
+- `references/execution-state-machine.md` — canonical — INV-CONTINUE-001, INV-AUDIT-001, INV-RECOVERY-001, INV-BLOCKER-001
+- `references/final-audit-packaging.md` — specialist — no invariant owner
+- `references/gateway-goal-startup-recovery.md` — private_profile_only — no invariant owner
+- `references/gateway-recovery-ledger.md` — private_profile_only — no invariant owner
+- `references/gateway-restart-live-proof.md` — private_profile_only — no invariant owner
+- `references/gateway-restart-proof-and-bogus-goal.md` — private_profile_only — no invariant owner
+- `references/goal-format.md` — specialist — no invariant owner
+- `references/goal-identity-and-audit-lookup.md` — specialist — no invariant owner
+- `references/goal-state-compression-migration.md` — specialist — no invariant owner
+- `references/goalmanager-completion-loop-incidents.md` — incident — no invariant owner
+- `references/goalmanager-recovery.md` — incident — no invariant owner
+- `references/human20-seo-aeo-geo-planning.md` — private_profile_only — no invariant owner
+- `references/ignored-supergoal-package-hygiene.md` — specialist — no invariant owner
+- `references/legacy-monolith-2026-06-19.md` — archive — no invariant owner
+- `references/legacy-skill-phase-validation.md` — specialist — no invariant owner
+- `references/live-activation-continuation-hardening.md` — specialist — no invariant owner
+- `references/loop-design-gate.md` — canonical — no invariant owner
+- `references/manual-provider-resource-adoption.md` — specialist — no invariant owner
+- `references/markdown-report-shell-quoting.md` — specialist — no invariant owner
+- `references/model-gateway-supergoal-live-failure.md` — private_profile_only — no invariant owner
+- `references/money-skill-safe-lane-vs-live-rail.md` — private_profile_only — no invariant owner
+- `references/no-internal-approval-standing-goal.md` — specialist — no invariant owner
+- `references/old-server-decommission-drain.md` — specialist — no invariant owner
+- `references/phase-boundary-state-and-characterization.md` — specialist — no invariant owner
+- `references/phase-completion-ledger-discipline.md` — incident — no invariant owner
+- `references/phase-design.md` — specialist — no invariant owner
+- `references/phase-marker-bookkeeping.md` — specialist — no invariant owner
+- `references/planning-depth.md` — specialist — no invariant owner
+- `references/polymarket-live-activation-goal-correction.md` — private_profile_only — no invariant owner
+- `references/polymarket-privy-live-activation-goals.md` — private_profile_only — no invariant owner
+- `references/post-deploy-repair-audit.md` — specialist — no invariant owner
+- `references/process-integrity-production-runs.md` — specialist — no invariant owner
+- `references/production-deploy-gates.md` — specialist — no invariant owner
+- `references/production-safety.md` — canonical — no invariant owner
+- `references/repeated-approval-blocked-goal-loop.md` — incident — no invariant owner
+- `references/repeated-complete-continuations.md` — incident — no invariant owner
+- `references/repeated-completed-wrapper-guard.md` — incident — no invariant owner
+- `references/reply-md-goal-launch.md` — specialist — no invariant owner
+- `references/repo-state-comparison.md` — specialist — no invariant owner
+- `references/research-and-architecture-gates.md` — specialist — no invariant owner
+- `references/research-before-design.md` — specialist — no invariant owner
+- `references/research-report-to-supergoal.md` — specialist — no invariant owner
+- `references/research-to-skill-library-supergoal.md` — specialist — no invariant owner
+- `references/rollout-final-audit-lessons.md` — specialist — no invariant owner
+- `references/rpd-review-gates.md` — canonical — INV-RPD-001
+- `references/rpd-reviewed-supergoal-launch.md` — specialist — no invariant owner
+- `references/rpd-to-supergoal-handoff.md` — specialist — no invariant owner
+- `references/skill-feature-audit-user-stories.md` — specialist — no invariant owner
+- `references/skill-maintenance.md` — canonical — no invariant owner
+- `references/skill-package-sync.md` — specialist — no invariant owner
+- `references/source-lock-recovery.md` — incident — no invariant owner
+- `references/stale-phase-route-verification.md` — specialist — no invariant owner
+- `references/standing-goal-continuation-completion.md` — incident — no invariant owner
+- `references/standing-goal-continuous-execution-and-restart-recovery.md` — incident — no invariant owner
+- `references/standing-goal-disambiguation-and-audit-lookup.md` — specialist — no invariant owner
+- `references/standing-goal-final-audit-completion.md` — incident — no invariant owner
+- `references/supergoal-continuation-and-package-path-drift.md` — specialist — no invariant owner
+- `references/supergoal-git-cleanup-resume.md` — specialist — no invariant owner
+- `references/supergoal-goal-code-review-hardening.md` — specialist — no invariant owner
+- `references/supergoal-goal-pipeline-turn-yield.md` — specialist — no invariant owner
+- `references/supergoal-hermes-update-preservation.md` — specialist — no invariant owner
+- `references/supergoal-live-restart-proof.md` — incident — no invariant owner
+- `references/supergoal-review-artifact-delivery.md` — specialist — no invariant owner
+- `references/supergoal-status-snapshots.md` — specialist — no invariant owner
+- `references/telegram-button-goal-session-key.md` — private_profile_only — no invariant owner
+- `references/telegram-delivery-idempotency.md` — private_profile_only — no invariant owner
+- `references/telegram-file-delivery-idempotency.md` — private_profile_only — no invariant owner
+- `references/telegram-goal-kickoff-prompt-invariant.md` — private_profile_only — no invariant owner
+- `references/telegram-goal-launch-hardening.md` — private_profile_only — no invariant owner
+- `references/telegram-goal-live-verification.md` — private_profile_only — no invariant owner
+- `references/telegram-launch-and-delivery.md` — canonical — INV-DELIVERY-001
+- `references/telegram-launch-card-ux.md` — private_profile_only — no invariant owner
+- `references/telegram-md-goal-launch-hardening.md` — private_profile_only — no invariant owner
+- `references/telegram-md-goal-launch-ux.md` — private_profile_only — no invariant owner
+- `references/telegram-md-launch-pipeline-hardening.md` — private_profile_only — no invariant owner
+- `references/telegram-review-file-delivery-gate.md` — private_profile_only — no invariant owner
+- `references/telegram-supergoal-artifact-delivery-correction.md` — private_profile_only — no invariant owner
+- `references/upstream-goal-compatibility.md` — canonical — no invariant owner
+- `references/upstream-goal-reconciliation.md` — specialist — no invariant owner
+- `references/v2-v3-migration.md` — specialist — no invariant owner

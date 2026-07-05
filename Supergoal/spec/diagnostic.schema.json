@@ -1,0 +1,63 @@
+{
+  "$id": "https://hermes.local/chip-supergoal/diagnostic.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "artifact": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "blocking_stage": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "code": {
+      "pattern": "^SGV-[A-Z0-9]+(?:-[A-Z0-9]+)*$",
+      "type": "string"
+    },
+    "details": {
+      "type": "object"
+    },
+    "extensions": {
+      "type": "object"
+    },
+    "invariant_id": {
+      "pattern": "^INV-[A-Z0-9]+-[0-9]{3}$",
+      "type": "string"
+    },
+    "message": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "pointer": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "remediation": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "severity": {
+      "enum": [
+        "info",
+        "warning",
+        "error",
+        "blocker",
+        "corruption"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "code",
+    "severity",
+    "blocking_stage",
+    "invariant_id",
+    "artifact",
+    "pointer",
+    "message",
+    "remediation"
+  ],
+  "title": "chip-supergoal diagnostic",
+  "type": "object"
+}

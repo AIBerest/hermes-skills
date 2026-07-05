@@ -1,0 +1,14 @@
+{
+  "delivery": {
+    "review_pack_required": false,
+    "transport": "none"
+  },
+  "extends": "base",
+  "name": "public-clean",
+  "privacy": {
+    "private_operator_rules": false,
+    "strip_private_references": true
+  },
+  "profile_version": "1.0",
+  "public_clean": true
+}

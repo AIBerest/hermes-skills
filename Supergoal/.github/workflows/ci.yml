@@ -1,0 +1,88 @@
+name: chip-supergoal-ci
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: chip-supergoal-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  unit:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332
+      - name: Install Python test dependency
+        run: python3 -m pip install --upgrade PyYAML
+      - name: Unit tests
+        run: python3 -m unittest discover -s tests/unit
+
+  schema:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332
+      - name: JSON syntax and schema docs
+        run: python3 -m json.tool spec/contract.schema.json >/dev/null && python3 -m json.tool spec/state.schema.json >/dev/null && python3 -m json.tool spec/evidence.schema.json >/dev/null
+
+  semantic:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332
+      - name: Semantic tests
+        run: python3 -m unittest discover -s tests/semantic
+
+  rendering:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332
+      - name: Rendering/determinism tests
+        run: python3 -m unittest discover -s tests/rendering
+
+  e2e:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332
+      - name: Hermetic E2E tests
+        run: python3 -m unittest discover -s tests/e2e
+
+  security:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332
+      - name: Shell syntax and optional shellcheck/shfmt
+        run: |
+          bash -n scripts/*.sh templates/delivery/*.sh
+          if command -v shellcheck >/dev/null; then shellcheck scripts/*.sh templates/delivery/*.sh; else echo "shellcheck unavailable"; fi
+          if command -v shfmt >/dev/null; then shfmt -d scripts/*.sh templates/delivery/*.sh; else echo "shfmt unavailable"; fi
+      - name: Security tests
+        run: python3 -m unittest discover -s tests/security
+      - name: Secret/privacy scan
+        run: bash scripts/test.sh
+
+  migration:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332
+      - name: Migration tests
+        run: python3 -m unittest discover -s tests/migration
+
+  reference:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332
+      - name: Reference catalog and release checks
+        run: python3 -m unittest tests.unit.test_reference_catalog_profiles tests.ci.test_release_engineering
+
+  aggregate:
+    runs-on: ubuntu-24.04
+    needs: [unit, schema, semantic, rendering, e2e, security, migration, reference]
+    steps:
+      - uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332
+      - name: Install Python test dependency
+        run: python3 -m pip install --upgrade PyYAML
+      - name: Full aggregate suite
+        run: bash scripts/test.sh

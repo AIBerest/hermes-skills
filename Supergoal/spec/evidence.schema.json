@@ -1,0 +1,92 @@
+{
+  "$id": "https://hermes.local/chip-supergoal/evidence.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "artifact_sha256": {
+      "type": "string"
+    },
+    "captured_at": {
+      "type": "string"
+    },
+    "command": {
+      "type": "string"
+    },
+    "contract_revision": {
+      "type": "integer"
+    },
+    "criterion_id": {
+      "type": "string"
+    },
+    "evidence_id": {
+      "type": "string"
+    },
+    "exit_code": {
+      "type": [
+        "integer",
+        "null"
+      ]
+    },
+    "fresh_until": {
+      "type": "string"
+    },
+    "goal_id": {
+      "type": "string"
+    },
+    "phase_id": {
+      "type": "string"
+    },
+    "producer": {
+      "type": "string"
+    },
+    "redaction": {
+      "type": "string"
+    },
+    "replayable": {
+      "type": "boolean"
+    },
+    "result": {
+      "enum": [
+        "pass",
+        "fail",
+        "stale",
+        "unverified"
+      ]
+    },
+    "stderr_path": {
+      "type": "string"
+    },
+    "stdout_path": {
+      "type": "string"
+    },
+    "type": {
+      "enum": [
+        "command_result",
+        "file_hash",
+        "git_diff",
+        "api_response",
+        "log_excerpt",
+        "screenshot",
+        "manual_observation",
+        "external_source_snapshot",
+        "delivery_ack",
+        "approval_manifest"
+      ]
+    }
+  },
+  "required": [
+    "evidence_id",
+    "goal_id",
+    "contract_revision",
+    "phase_id",
+    "criterion_id",
+    "type",
+    "producer",
+    "captured_at",
+    "fresh_until",
+    "replayable",
+    "result"
+  ],
+  "title": "chip-supergoal evidence",
+  "type": "object"
+}
