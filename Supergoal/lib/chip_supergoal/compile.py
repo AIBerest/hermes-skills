@@ -95,7 +95,7 @@ def _load_sealed_manifest(root: Path) -> dict:
     manifest_path = root / "MANIFEST.json"
     contract_path = root / "CONTRACT.json"
     if not manifest_path.is_file() or not contract_path.is_file():
-        raise CompileSafetyError("existing output is not a sealed chip-supergoal package")
+        raise CompileSafetyError("existing output is not a sealed supergoal package")
     try:
         manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
     except Exception as exc:

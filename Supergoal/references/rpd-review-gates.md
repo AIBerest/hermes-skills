@@ -1,6 +1,6 @@
 # Embedded RPD v2 review gates
 
-chip-supergoal is independent from any external `/rpd` skill. It embeds the hard RPD protocol directly so the planner and generated `/goal` protocol work after a plain skill install.
+supergoal is independent from any external `/rpd` skill. It embeds the hard RPD protocol directly so the planner and generated `/goal` protocol work after a plain skill install.
 
 RPD v2 imports the durable invariants from the standalone `/rpd` protocol without importing that skill itself: context discipline, evidence tiers, mutation-only findings, Senior Gate for risky work, overengineering budget, and anti-theater synthesis.
 
@@ -113,7 +113,7 @@ Do not accept subagent findings from stale or partial context as direct evidence
 
 ## RPD_PLAN_REVIEW
 
-Runs inside `/chip-supergoal` after `ROADMAP.md` and phase specs are written, before the plan is shown to the user.
+Runs inside `/supergoal` after `ROADMAP.md` and phase specs are written, before the plan is shown to the user.
 
 It must check:
 1. Does `LOOP_DESIGN.md` define a bounded execution loop with host/reviewer/judge roles, verification gates, state, stop conditions, budget, boundaries, egress/redaction, and failure recovery?

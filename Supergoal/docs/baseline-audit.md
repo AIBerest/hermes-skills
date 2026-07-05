@@ -1,10 +1,10 @@
-# Baseline audit — chip-supergoal Architect+ v3 Phase 1
+# Baseline audit — supergoal Architect+ v3 Phase 1
 
 Generated: 2026-06-25T22:34:17.181187+00:00
 
 ## Scope
 - Phase 1 freezes current observable behavior and records known semantic/security escapes as expected-failure regression tests.
-- The launched goal text referenced `<installed-skill-dir>/.supergoal/architect-plus-v3-upgrade`, but the verified package was relocated to `<workspace-dir>/.supergoal/chip-supergoal-architect-plus-v3-upgrade` to avoid polluting the skill self-test launch-marker scan. This path drift is recorded and should be corrected by future launch generation.
+- The launched goal text referenced `<installed-skill-dir>/.supergoal/architect-plus-v3-upgrade`, but the verified package was relocated to `<workspace-dir>/.supergoal/supergoal-architect-plus-v3-upgrade` to avoid polluting the skill self-test launch-marker scan. This path drift is recorded and should be corrected by future launch generation.
 
 ## Source hashes
 - `<home-dir>/.hermes/document_cache/doc_fbdd75e323cd_CHIP_SUPERGOAL_ARCHITECT_PLUS_UPGRADE_PLAN-1.md` — sha256 `b000e0882a340ea39970c5748e5e282d6add09cbaf87745ee0ff292a45b34f15` — bytes 94826

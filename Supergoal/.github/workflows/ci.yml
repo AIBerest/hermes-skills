@@ -1,4 +1,4 @@
-name: chip-supergoal-ci
+name: supergoal-ci
 
 on:
   push:
@@ -8,7 +8,7 @@ permissions:
   contents: read
 
 concurrency:
-  group: chip-supergoal-${{ github.ref }}
+  group: supergoal-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:

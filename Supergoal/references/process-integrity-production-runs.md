@@ -10,7 +10,7 @@ A production task can be technically completed while still failing the Supergoal
 
 If the user asks for Supergoal, or corrects the agent for acting outside Supergoal:
 
-- `/chip-supergoal` remains planning-only.
+- `/supergoal` remains planning-only.
 - Do not edit product code, deploy, migrate, restart services, or mark phases complete in the planning chat.
 - Safe recon and safe pre-flight checks are allowed only to prepare the plan/handoff.
 - Existing manual edits are `dirty baseline`, not completed phases.

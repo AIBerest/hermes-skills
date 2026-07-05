@@ -1,4 +1,4 @@
-# Release checklist — chip-supergoal Architect+ v3
+# Release checklist — supergoal Architect+ v3
 
 ## Mandatory local gates
 

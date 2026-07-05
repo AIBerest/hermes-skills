@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Reference taxonomy regression probes for chip-supergoal."""
+"""Reference taxonomy regression probes for supergoal."""
 from pathlib import Path
 import re, sys
 

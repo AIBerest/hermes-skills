@@ -1,6 +1,6 @@
 # Architect+ v3 upgrade execution lessons
 
-Use this reference when executing or repairing a SuperGoal that upgrades `chip-supergoal` itself, especially when the mission package path, skill self-tests, and generated launch markers can interfere with each other.
+Use this reference when executing or repairing a SuperGoal that upgrades `supergoal` itself, especially when the mission package path, skill self-tests, and generated launch markers can interfere with each other.
 
 ## Durable lessons
 
@@ -33,6 +33,6 @@ Use this reference when executing or repairing a SuperGoal that upgrades `chip-s
 - compile twice and byte-compare immutable outputs
 - `sgctl validate-package ... --strict`
 - `sgctl migrate-v2 ...` plus validation of migrated contract
-- `skill_view("chip-supergoal")` loadability proof
+- `skill_view("supergoal")` loadability proof
 - `reports/final-audit.json` and `reports/final-audit.md`
 - final markers in one response: `AUDIT_COMPLETE`, `SUPERGOAL_RUN_COMPLETE`, `Goal complete: yes`

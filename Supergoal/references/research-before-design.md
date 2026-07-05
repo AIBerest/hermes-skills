@@ -1,6 +1,6 @@
 # Research-before-design gate
 
-chip-supergoal is plan-only, but approval-ready plans must not invent architecture from stale assumptions when current facts or existing solutions matter.
+supergoal is plan-only, but approval-ready plans must not invent architecture from stale assumptions when current facts or existing solutions matter.
 
 ## Trigger
 

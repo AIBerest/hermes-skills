@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Regression suite for the public chip-supergoal skill package.
+# Regression suite for the public supergoal skill package.
 
 set -euo pipefail
 
@@ -52,11 +52,11 @@ cat >"$loop_instantiated" <<'EOF'
 # LOOP_DESIGN.md
 
 ## Goal
-Ship a falsifiable refactor while preserving the current chip-supergoal contract and tests.
+Ship a falsifiable refactor while preserving the current supergoal contract and tests.
 
 ## Context sources
-- User objective: refactor chip-supergoal through Shaw xhigh review.
-- Repository / filesystem: <workspace-dir>/chip-supergoal.
+- User objective: refactor supergoal through Shaw xhigh review.
+- Repository / filesystem: <workspace-dir>/supergoal.
 - Canonical source: references/artifact-boundaries.md.
 
 ## Host model
@@ -253,7 +253,7 @@ for raw in fm.group(1).splitlines():
         continue
     key, value = raw.split(':', 1)
     data[key.strip()] = value.strip().strip('"').strip("'")
-assert data['name'] == 'chip-supergoal'
+assert data['name'] == 'supergoal'
 assert len(data['description']) <= 1024
 assert len(text.encode()) < 40000, len(text.encode())
 required = [

@@ -31,7 +31,7 @@ def render_thinking(contract: Contract) -> str:
 - none
 
 ## Tools/skills used
-- chip-supergoal compiler
+- supergoal compiler
 
 ## Best practices applied
 - deterministic rendering

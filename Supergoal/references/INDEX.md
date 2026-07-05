@@ -1,4 +1,4 @@
-# chip-supergoal reference index
+# supergoal reference index
 
 ## Canonical references
 

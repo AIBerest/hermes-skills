@@ -1,12 +1,12 @@
 ---
-name: chip-supergoal
-description: Principal+ plan-only SuperGoal planner for non-trivial software work. Builds a verified .supergoal package with THINKING, LOOP_DESIGN, ROADMAP, STATE, phase specs, PROTOCOL, RPD/Senior gates, Telegram delivery receipts when required, and one explicit /goal handoff. Use for /chip-supergoal, plan and ship X, autonomous build planning, risky refactors, production-adjacent tasks, and standing SuperGoal continuation repair.
+name: supergoal
+description: Use when invoking /supergoal, making a SuperGoal/SG/ТЗ package, planning and shipping non-trivial software work, autonomous build planning, risky refactors, production-adjacent tasks, or standing SuperGoal continuation repair.
 argument-hint: <describe what must be built, fixed, shipped, or planned>
 ---
 
-# chip-supergoal
+# supergoal
 
-`chip-supergoal` is a **planner/compiler**, not the executor. It turns a non-trivial task into a disk-backed `.supergoal/` package and one launchable standard Hermes `/goal` handoff. The later upstream GoalManager session executes from the generated files, verifies every phase, runs final audit, and prints `SUPERGOAL_RUN_COMPLETE` only after `AUDIT_COMPLETE`.
+`supergoal` is a **planner/compiler**, not the executor. It turns a non-trivial task into a disk-backed `.supergoal/` package and one launchable standard Hermes `/goal` handoff. The later upstream GoalManager session executes from the generated files, verifies every phase, runs final audit, and prints `SUPERGOAL_RUN_COMPLETE` only after `AUDIT_COMPLETE`.
 
 ## Principal+ contract
 
@@ -25,7 +25,7 @@ Use this root as the controller. Heavy detail lives in references and templates.
 
 Use for:
 
-- `/chip-supergoal <task>` or “make SuperGoal / SG / ТЗ package”
+- `/supergoal <task>` or “make SuperGoal / SG / ТЗ package”
 - “plan and ship X”, autonomous feature/refactor/redesign planning
 - brownfield work where codebase reality, tests, deployment, or recovery matter
 - greenfield products/systems where stack, research, architecture, and phase boundaries matter
@@ -120,7 +120,7 @@ Run `bash "$SUPERGOAL_DIR/scripts/validate-phase.sh" <phase-file>` for every pha
 
 ## RPD / Senior Gate
 
-`chip-supergoal` embeds RPD. Do not invoke external `/rpd` to run this workflow.
+`supergoal` embeds RPD. Do not invoke external `/rpd` to run this workflow.
 
 - `RPD_PLAN_REVIEW` always runs before Stage 6 user review.
 - `RPD_PHASE_REVIEW` runs in generated `/goal` for risky phases or `RPD required: yes`.
@@ -148,7 +148,7 @@ Core active references:
 
 Specialist refs and superseded incident clusters live in `references/dispatch-map.md` and `references/INDEX.md`. Incident refs are for forensics unless the dispatch map names them for the current trigger.
 
-For self-upgrades of `chip-supergoal` toward Architect+ / contract-compiler behavior, load `references/architect-plus-v3-upgrade-execution-lessons.md` before executing or repairing the mission package. It captures path-drift handling, non-git proof shape, temporary xfail cleanup, bytecode/privacy-scan pitfall, and local-alpha final audit rules.
+For self-upgrades of `supergoal` toward Architect+ / contract-compiler behavior, load `references/architect-plus-v3-upgrade-execution-lessons.md` before executing or repairing the mission package. It captures path-drift handling, non-git proof shape, temporary xfail cleanup, bytecode/privacy-scan pitfall, and local-alpha final audit rules.
 
 If a new incident only adds another example of an existing invariant, update the relevant reference. Add to root only when it introduces a new invariant or public marker.
 
@@ -156,9 +156,9 @@ If a new incident only adds another example of an existing invariant, update the
 
 - `LAUNCH_GOAL.md` is the replyable launch file. It contains the exact upstream-compatible `SUPERGOAL_GOAL_BODY:` line.
 - `ROADMAP.md`, `THINKING.md`, and `PROTOCOL.md` must not contain their own actual launch body line.
-- When creating a SuperGoal **about the `chip-supergoal` skill itself**, do not leave the generated package under the skill root if the package contains a real `LAUNCH_GOAL.md`: the skill self-test scans the skill tree and expects only the template launch body. Put the mission package in an external workspace path (for example `<workspace-dir>/.supergoal/<name>`) or ensure it is outside the self-test scan before running `scripts/test.sh`.
+- When creating a SuperGoal **about the `supergoal` skill itself**, do not leave the generated package under the skill root if the package contains a real `LAUNCH_GOAL.md`: the skill self-test scans the skill tree and expects only the template launch body. Put the mission package in an external workspace path (for example `<workspace-dir>/.supergoal/<name>`) or ensure it is outside the self-test scan before running `scripts/test.sh`.
 - Planning-stage review pack uses `review_pack_v2`: `THINKING.md`, `LOOP_DESIGN.md`, `ROADMAP.md`, `LAUNCH_GOAL.md`, plus `RESEARCH.md` when non-empty.
-- **Chip default: always send the planning-stage `.md` files back into the current Telegram thread for Chip to review, even if he did not explicitly ask for files.** This is a standing preference for `chip-supergoal`, not an optional delivery mode. Include native `MEDIA:` attachments or use the Telegram delivery script, then verify delivery/receipt before saying the package is ready. A text summary without the `.md` files is incomplete.
+- **Chip default: always send the planning-stage `.md` files back into the current Telegram thread for Chip to review, even if he did not explicitly ask for files.** This is a standing preference for `supergoal`, not an optional delivery mode. Include native `MEDIA:` attachments or use the Telegram delivery script, then verify delivery/receipt before saying the package is ready. A text summary without the `.md` files is incomplete.
 - For Chip-facing SuperGoal packages with useful supporting context, also send `RESEARCH.md` when it exists and is not empty; keep `PROTOCOL.md`, `STATE.md`, and phase specs on disk unless Chip asks for the full bundle.
 - If Telegram/native file delivery is required or triggered by the Chip default above, the run must create/send receipts and verify `ok=true` and `sent=true` before declaring the corresponding gate closed. If a multi-file send partially succeeds or one attachment times out, resend only the missing file(s), store all successful message IDs in the receipt, and record the partial-send note instead of treating the whole review pack as failed or silently complete.
 - Final artifacts require `SUPERGOAL_FILES_SENT` before `SUPERGOAL_RUN_COMPLETE` when final-file delivery was requested.
@@ -173,7 +173,7 @@ bash scripts/test.sh
 python3 <skills-dir>/create-skill/scripts/skill_workflow_guard.py <installed-skill-dir> || true
 ```
 
-Then verify live loadability with `skill_view("chip-supergoal")` and, for critical refs, `skill_view("chip-supergoal", file_path="references/rpd-review-gates.md")`.
+Then verify live loadability with `skill_view("supergoal")` and, for critical refs, `skill_view("supergoal", file_path="references/rpd-review-gates.md")`.
 
 ## Output Contract
 
@@ -188,7 +188,7 @@ For Chip, final planning output is compact and evidence-first:
 Do not claim execution success from this planner. Only the `/goal` executor can earn `AUDIT_COMPLETE` and `SUPERGOAL_RUN_COMPLETE`.
 ## Quick Test Checklist
 
-- [ ] `skill_view("chip-supergoal")` loads this concise Principal+ root.
+- [ ] `skill_view("supergoal")` loads this concise Principal+ root.
 - [ ] `bash scripts/test.sh` exits 0 from the skill directory.
 - [ ] `templates/LAUNCH_GOAL.md` is the only file with an actual line starting `SUPERGOAL_GOAL_BODY:`.
 - [ ] `templates/ROADMAP.md` has no launch-body line.
@@ -199,7 +199,7 @@ Do not claim execution success from this planner. Only the `/goal` executor can 
 
 ## Done Criteria
 
-- [ ] Frontmatter has `name: chip-supergoal`, trigger-rich description, and `argument-hint`.
+- [ ] Frontmatter has `name: supergoal`, trigger-rich description, and `argument-hint`.
 - [ ] Root `SKILL.md` stays under the local architecture budget enforced by `scripts/test.sh`.
 - [ ] Planner writes `THINKING.md`, optional `RESEARCH.md`, `LOOP_DESIGN.md`, `ROADMAP.md`, `STATE.md`, `PROTOCOL.md`, `LAUNCH_GOAL.md`, and strict phase specs.
 - [ ] Embedded RPD/Senior Gate remains self-contained; no external `/rpd` dependency.

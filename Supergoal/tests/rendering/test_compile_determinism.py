@@ -68,7 +68,7 @@ class CompileSafetyTest(unittest.TestCase):
             result = self.run_compile(out)
             self.assertNotEqual(result.returncode, 0)
             self.assertTrue((out / "important.txt").is_file())
-            self.assertIn("sealed chip-supergoal package", result.stderr + result.stdout)
+            self.assertIn("sealed supergoal package", result.stderr + result.stdout)
 
     def test_compile_refuses_runtime_package(self):
         with tempfile.TemporaryDirectory() as td:

@@ -1,4 +1,4 @@
-# chip-supergoal execution protocol
+# supergoal execution protocol
 
 This file is read by the executing agent at the start of the single `/goal` session and followed throughout. It is the operating manual for the autonomous run.
 
@@ -61,7 +61,7 @@ Do not use `Goal complete: yes` anywhere else. A phase being done is not the who
 
 ## Embedded RPD v2 gates
 
-chip-supergoal embeds RPD directly. Do not load or invoke an external `/rpd` skill. Use this protocol and the embedded RPD contract below.
+supergoal embeds RPD directly. Do not load or invoke an external `/rpd` skill. Use this protocol and the embedded RPD contract below.
 
 RPD is a mutation gate, not a commentary layer. Every finding must either mutate work/specs/commands/criteria/audit-fix specs, or be marked `checked-holds` with an evidence tier. Material claims must use one of: `direct artifact`, `provided context`, `external/current source`, or `assumption` with falsifier. Memory, stale phase text, and previous self-reports are not proof of current state.
 

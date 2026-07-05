@@ -1,6 +1,6 @@
 # Dev-history hardening lessons
 
-Use when Chip asks to review recent Dev history, repeated SuperGoal pain, or to harden `chip-supergoal` from real operator incidents.
+Use when Chip asks to review recent Dev history, repeated SuperGoal pain, or to harden `supergoal` from real operator incidents.
 
 ## Evidence source
 

@@ -1,3 +1,3 @@
-"""chip-supergoal v3 support library."""
+"""supergoal v3 support library."""
 
 __all__ = ["diagnostics", "invariants"]

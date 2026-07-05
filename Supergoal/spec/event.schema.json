@@ -1,5 +1,5 @@
 {
-  "$id": "https://hermes.local/chip-supergoal/event.schema.json",
+  "$id": "https://hermes.local/supergoal/event.schema.json",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "additionalProperties": false,
   "properties": {
@@ -53,6 +53,6 @@
     "prev_event_sha256",
     "event_sha256"
   ],
-  "title": "chip-supergoal event",
+  "title": "supergoal event",
   "type": "object"
 }

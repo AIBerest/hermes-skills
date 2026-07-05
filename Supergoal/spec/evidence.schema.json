@@ -1,5 +1,5 @@
 {
-  "$id": "https://hermes.local/chip-supergoal/evidence.schema.json",
+  "$id": "https://hermes.local/supergoal/evidence.schema.json",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "additionalProperties": false,
   "properties": {
@@ -87,6 +87,6 @@
     "replayable",
     "result"
   ],
-  "title": "chip-supergoal evidence",
+  "title": "supergoal evidence",
   "type": "object"
 }

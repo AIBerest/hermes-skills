@@ -1,6 +1,6 @@
-# chip-supergoal
+# supergoal
 
-**chip-supergoal** — это skill для Hermes, который превращает нетривиальную инженерную задачу в проверяемый, файловый **SuperGoal package** и один стандартный handoff для Hermes `/goal`.
+**supergoal** — это skill для Hermes, который превращает нетривиальную инженерную задачу в проверяемый, файловый **SuperGoal package** и один стандартный handoff для Hermes `/goal`.
 
 Он нужен для задач, где обычный план в чате слишком хрупкий: production-adjacent изменения, рискованные рефакторы, миграции, безопасность, длинная многофазная разработка и автономное исполнение, где нужны состояние, доказательства и финальный аудит.
 
@@ -8,7 +8,7 @@ English documentation: [`../README.md`](../README.md)
 
 ## Что делает skill
 
-`chip-supergoal` — это **planner/compiler**, а не исполнитель.
+`supergoal` — это **planner/compiler**, а не исполнитель.
 
 Он создаёт директорию `.supergoal/` с артефактами:
 
@@ -35,7 +35,7 @@ English documentation: [`../README.md`](../README.md)
 4. Рискованные изменения проходят без review.
 5. План нельзя безопасно передать другому исполнителю.
 
-`chip-supergoal` закрывает эти провалы через package contract:
+`supergoal` закрывает эти провалы через package contract:
 
 - явные фазы;
 - обязательные verification commands;
@@ -52,7 +52,7 @@ English documentation: [`../README.md`](../README.md)
 Типичный вызов:
 
 ```text
-/chip-supergoal Build or refactor X end-to-end
+/supergoal Build or refactor X end-to-end
 ```
 
 Проверить репозиторий локально:
@@ -218,8 +218,8 @@ python3 -m unittest tests.security.test_archive_symlink tests.security.test_forg
 ```bash
 python3 -m unittest discover -s tests
 bash scripts/test.sh
-python3 scripts/sgctl.py compile examples/brownfield-feature/CONTRACT.json --out /tmp/chip-supergoal-example
-python3 scripts/sgctl.py validate-package /tmp/chip-supergoal-example --strict
+python3 scripts/sgctl.py compile examples/brownfield-feature/CONTRACT.json --out /tmp/supergoal-example
+python3 scripts/sgctl.py validate-package /tmp/supergoal-example --strict
 ```
 
 ## Public-use notes

@@ -1,4 +1,4 @@
-# Compatibility matrix — chip-supergoal v3 workstream
+# Compatibility matrix — supergoal v3 workstream
 
 | Skill version | Contract/protocol | Hermetic probe | Live GoalManager probe | Notes |
 |---|---|---|---|---|

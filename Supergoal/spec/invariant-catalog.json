@@ -3,7 +3,7 @@
   "invariants": [
     {
       "canonical_reference": "SKILL.md",
-      "description": "chip-supergoal plans/compiles packages but does not execute numbered implementation phases or become a production runner.",
+      "description": "supergoal plans/compiles packages but does not execute numbered implementation phases or become a production runner.",
       "id": "INV-BOUNDARY-001",
       "introduced_by": [
         "ARCHITECT-PLUS-PLAN"

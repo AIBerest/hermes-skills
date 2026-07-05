@@ -1,7 +1,7 @@
 # LOOP_DESIGN.md
 
 ## Goal
-Ship a falsifiable chip-supergoal change with no courtesy stop at phase boundaries.
+Ship a falsifiable supergoal change with no courtesy stop at phase boundaries.
 
 ## Context sources
 - Skill root: <installed-skill-dir>.

@@ -3,7 +3,7 @@ import argparse
 import csv, re, sys
 from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
-CSV_PATH = ROOT / 'docs' / 'chip-supergoal-user-stories.csv'
+CSV_PATH = ROOT / 'docs' / 'supergoal-user-stories.csv'
 
 def text(rel):
     return (ROOT / rel).read_text(encoding='utf-8')
@@ -44,7 +44,7 @@ def script_has(rel, *words):
     return exists(rel) and contains(rel, *words)
 
 CHECKS = {
-'SG-001': lambda: contains('SKILL.md','/chip-supergoal','standing SuperGoal continuation/repair','Do **not** use for tiny edits'),
+'SG-001': lambda: contains('SKILL.md','/supergoal','standing SuperGoal continuation/repair','Do **not** use for tiny edits'),
 'SG-002': lambda: contains('SKILL.md','**Plan-only boundary**','must not execute numbered implementation phases'),
 'SG-003': lambda: only_launch_template_has_body(),
 'SG-004': lambda: contains('SKILL.md','One standard `/goal`','LAUNCH_GOAL.md') and ref_has('references/upstream-goal-compatibility.md','/goal'),
@@ -98,10 +98,10 @@ CHECKS = {
 'SG-052': lambda: exists('references/goal-state-compression-migration.md') and ref_has('references/goal-state-compression-migration.md','compression'),
 'SG-053': lambda: exists('references/supergoal-continuation-and-package-path-drift.md') and exists('references/context-anchor-and-wrong-goal-recovery.md'),
 'SG-054': lambda: all(exists(p) for p in ['references/goalmanager-completion-loop-incidents.md','references/standing-goal-final-audit-completion.md','references/rollout-final-audit-lessons.md']),
-'SG-055': lambda: exists('README.md') and any_contains('README.md','SuperGoal','chip-supergoal'),
+'SG-055': lambda: exists('README.md') and any_contains('README.md','SuperGoal','supergoal'),
 }
-parser = argparse.ArgumentParser(description='Validate chip-supergoal user-story coverage.')
-parser.add_argument('--update-csv', action='store_true', help='write updated status/evidence columns back to docs/chip-supergoal-user-stories.csv')
+parser = argparse.ArgumentParser(description='Validate supergoal user-story coverage.')
+parser.add_argument('--update-csv', action='store_true', help='write updated status/evidence columns back to docs/supergoal-user-stories.csv')
 args = parser.parse_args()
 
 rows=list(csv.DictReader(CSV_PATH.open(encoding='utf-8')))

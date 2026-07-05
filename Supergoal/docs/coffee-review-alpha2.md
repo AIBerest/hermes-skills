@@ -1,7 +1,7 @@
 # Coffee review — alpha.2 ZIP gate
 
 Date: 2026-06-26
-Package: `chip-supergoal` operator distribution
+Package: `supergoal` operator distribution
 Version: `3.0.0-alpha.2`
 
 ## Review verdict
@@ -16,7 +16,7 @@ The alpha.2 ZIP is a hardened Architect+ workstream artifact. It is still labele
    - Two independent compiles now compare byte-identical across all generated files.
 
 2. **Destructive compile protection**
-   - Existing output directories must already be sealed chip-supergoal packages.
+   - Existing output directories must already be sealed supergoal packages.
    - Arbitrary existing directories are refused and preserved.
    - Output targets containing the contract source are refused.
    - Different goal IDs are refused.

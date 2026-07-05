@@ -1,6 +1,6 @@
 # SuperGoal Reference Dispatch Map
 
-This is the active reference taxonomy for `chip-supergoal`. Root `SKILL.md` should point here instead of growing a long incident list.
+This is the active reference taxonomy for `supergoal`. Root `SKILL.md` should point here instead of growing a long incident list.
 
 ## Active canonical references
 

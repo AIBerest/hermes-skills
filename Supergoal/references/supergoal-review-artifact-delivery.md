@@ -1,6 +1,6 @@
 # SuperGoal review artifact delivery — explicit engineering chat correction
 
-Use when preparing or correcting a `/chip-supergoal` review pack in Telegram.
+Use when preparing or correcting a `/supergoal` review pack in Telegram.
 
 ## Lesson
 Do not over-apply the Sigurd/chiptg guard. The guard blocks SuperGoal artifacts only in the exact post-production Telegram chat reserved for `tg`/ChipCR previews. If the current chat is an engineering/SuperGoal working thread, Chip DM, Dev topic, or Chip explicitly says “attach in this chat”, attach the artifacts there.

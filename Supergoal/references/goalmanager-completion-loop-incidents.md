@@ -14,7 +14,7 @@ Observed bad sequence:
 4. A later “silent/no-op” attempt returned an empty final response, but Telegram rendered it as `(empty)`.
 5. User correctly complained about spam.
 
-## Correct handling in chip-supergoal
+## Correct handling in supergoal
 
 - First classify whether the incoming message is a stale host wrapper or a fresh human instruction.
 - If it is only a repeated post-complete wrapper and the runtime can truly suppress delivery, no-op silently.

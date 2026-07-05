@@ -1,6 +1,6 @@
 # Upstream `/goal` compatibility
 
-Use this reference whenever `chip-supergoal` generates or updates a SuperGoal package. The target runtime is the standard Hermes Agent `/goal` / `GoalManager` loop, not a custom phase runner.
+Use this reference whenever `supergoal` generates or updates a SuperGoal package. The target runtime is the standard Hermes Agent `/goal` / `GoalManager` loop, not a custom phase runner.
 
 ## Boundary
 
@@ -11,7 +11,7 @@ Hermes upstream `/goal` owns:
 - judge calls after each assistant response;
 - max-turn budget, pause/resume/clear/status, and restart recovery for active safe goals.
 
-`chip-supergoal` owns:
+`supergoal` owns:
 
 - compiling the task into a disk-backed `.supergoal/` package;
 - `PROTOCOL.md`, `ROADMAP.md`, `STATE.md`, phase specs, receipts, and audit rules;

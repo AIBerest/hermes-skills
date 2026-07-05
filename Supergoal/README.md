@@ -1,6 +1,6 @@
-# chip-supergoal
+# supergoal
 
-**chip-supergoal** is a Hermes skill that turns a non-trivial engineering request into a disk-backed, reviewable **SuperGoal package** and one standard Hermes `/goal` handoff.
+**supergoal** is a Hermes skill that turns a non-trivial engineering request into a disk-backed, reviewable **SuperGoal package** and one standard Hermes `/goal` handoff.
 
 It is designed for work that should not be handled as a loose chat plan: production-adjacent changes, risky refactors, multi-phase implementation, migrations, security-sensitive work, and long-running agent execution that needs state, evidence, and a final audit.
 
@@ -8,7 +8,7 @@ It is designed for work that should not be handled as a loose chat plan: product
 
 ## What it does
 
-`chip-supergoal` is a **planner/compiler**, not the executor.
+`supergoal` is a **planner/compiler**, not the executor.
 
 It creates a `.supergoal/` package containing:
 
@@ -35,7 +35,7 @@ Agentic engineering often fails in predictable ways:
 4. Risky work skips review because it looks like routine implementation.
 5. Generated plans are not executable by a separate agent.
 
-`chip-supergoal` addresses those failure modes by compiling the task into a package with:
+`supergoal` addresses those failure modes by compiling the task into a package with:
 
 - explicit phase boundaries;
 - mandatory verification commands;
@@ -52,7 +52,7 @@ Install or clone this repository as a Hermes skill directory, then load it throu
 Typical usage in Hermes:
 
 ```text
-/chip-supergoal Build or refactor X end-to-end
+/supergoal Build or refactor X end-to-end
 ```
 
 For direct CLI validation of this repository:
@@ -216,8 +216,8 @@ Suggested final gate:
 ```bash
 python3 -m unittest discover -s tests
 bash scripts/test.sh
-python3 scripts/sgctl.py compile examples/brownfield-feature/CONTRACT.json --out /tmp/chip-supergoal-example
-python3 scripts/sgctl.py validate-package /tmp/chip-supergoal-example --strict
+python3 scripts/sgctl.py compile examples/brownfield-feature/CONTRACT.json --out /tmp/supergoal-example
+python3 scripts/sgctl.py validate-package /tmp/supergoal-example --strict
 ```
 
 ## Public-use notes

@@ -1,6 +1,6 @@
 # Old-server decommission drain after production migration
 
-Use this reference from `chip-supergoal` phases that drain an old/source production host after a migration. It complements the root old-server decommission rule: backup/restore-readiness first, then workload classification, then provider-safe OS drain, then explicit delete approval.
+Use this reference from `supergoal` phases that drain an old/source production host after a migration. It complements the root old-server decommission rule: backup/restore-readiness first, then workload classification, then provider-safe OS drain, then explicit delete approval.
 
 ## Hard boundary
 

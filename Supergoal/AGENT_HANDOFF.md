@@ -1,9 +1,9 @@
-# chip-supergoal — maintainer handoff
+# supergoal — maintainer handoff
 
-Public source bundle for the `chip-supergoal` Hermes skill.
+Public source bundle for the `supergoal` Hermes skill.
 
 ## What this is
-- Skill root: `chip-supergoal/`
+- Skill root: `supergoal/`
 - Purpose: Principal+/Architect+ SuperGoal planner/compiler skill for disk-backed `.supergoal/` packages and standard Hermes `/goal` execution handoff.
 
 ## First files to read

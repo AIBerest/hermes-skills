@@ -1,5 +1,5 @@
 {
-  "$id": "https://hermes.local/chip-supergoal/state.schema.json",
+  "$id": "https://hermes.local/supergoal/state.schema.json",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "additionalProperties": false,
   "properties": {
@@ -71,6 +71,6 @@
     "attempt",
     "audit_round"
   ],
-  "title": "chip-supergoal STATE v3",
+  "title": "supergoal STATE v3",
   "type": "object"
 }

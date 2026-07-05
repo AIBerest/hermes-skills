@@ -17,7 +17,7 @@ Before `ROADMAP.md` and phase specs become launchable, the planner must design t
 - boundaries, approvals, egress, and redaction;
 - failure recovery path.
 
-Do **not** create a separate `/looper` command by default. For Chip's SuperGoal workflow, the LOOPER idea belongs inside `chip-supergoal` as a pre-roadmap design gate.
+Do **not** create a separate `/looper` command by default. For Chip's SuperGoal workflow, the LOOPER idea belongs inside `supergoal` as a pre-roadmap design gate.
 
 ## Required artifact: `LOOP_DESIGN.md`
 

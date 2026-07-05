@@ -1,5 +1,5 @@
 {
-  "$id": "https://hermes.local/chip-supergoal/contract.schema.json",
+  "$id": "https://hermes.local/supergoal/contract.schema.json",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "additionalProperties": false,
   "properties": {
@@ -65,6 +65,6 @@
     "delivery",
     "compatibility"
   ],
-  "title": "chip-supergoal CONTRACT v3",
+  "title": "supergoal CONTRACT v3",
   "type": "object"
 }

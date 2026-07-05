@@ -16,8 +16,8 @@
       "sources": [
         {
           "provider": "perplex",
-          "title": "Fixture Perplex research record for chip-supergoal tests",
-          "url": "https://example.com/chip-supergoal-research-fixture"
+          "title": "Fixture Perplex research record for supergoal tests",
+          "url": "https://example.com/supergoal-research-fixture"
         }
       ],
       "status": "satisfied",

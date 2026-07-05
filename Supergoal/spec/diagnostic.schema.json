@@ -1,5 +1,5 @@
 {
-  "$id": "https://hermes.local/chip-supergoal/diagnostic.schema.json",
+  "$id": "https://hermes.local/supergoal/diagnostic.schema.json",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "additionalProperties": false,
   "properties": {
@@ -58,6 +58,6 @@
     "message",
     "remediation"
   ],
-  "title": "chip-supergoal diagnostic",
+  "title": "supergoal diagnostic",
   "type": "object"
 }
