@@ -53,4 +53,3 @@ If a skill contains `/shaw`, `/opt/clawd-workspace`, `skills/secret`, `.openclaw
 ---
 
 Если check падает — skill дорабатывается через `/create-skill extract|interview|refactor`.
-
