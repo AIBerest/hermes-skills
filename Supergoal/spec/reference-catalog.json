@@ -1,0 +1,1543 @@
+{
+  "catalog_version": "1.0",
+  "generated_from": "references/*.md",
+  "references": [
+    {
+      "domain": [
+        "INDEX.md"
+      ],
+      "id": "REF-INDEX",
+      "last_reviewed": "2026-06-25",
+      "load_default": true,
+      "owns_invariants": [],
+      "path": "references/INDEX.md",
+      "status": "canonical",
+      "superseded_by": null,
+      "supersedes": [],
+      "triggers": [
+        "INDEX"
+      ]
+    },
+    {
+      "domain": [
+        "active"
+      ],
+      "id": "REF-ACTIVE-SUPERGOAL-SKILL-REVIEW-PAUSE",
+      "last_reviewed": "2026-06-25",
+      "load_default": false,
+      "owns_invariants": [],
+      "path": "references/active-supergoal-skill-review-pause.md",
+      "status": "specialist",
+      "superseded_by": null,
+      "supersedes": [],
+      "triggers": [
+        "active-supergoal-skill-review-pause"
+      ]
+    },
+    {
+      "domain": [
+        "architect"
+      ],
+      "id": "REF-ARCHITECT-PLUS-LITE",
+      "last_reviewed": "2026-06-25",
+      "load_default": false,
+      "owns_invariants": [],
+      "path": "references/architect-plus-lite.md",
+      "status": "specialist",
+      "superseded_by": null,
+      "supersedes": [],
+      "triggers": [
+        "architect-plus-lite"
+      ]
+    },
+    {
+      "domain": [
+        "execution",
+        "self-upgrade"
+      ],
+      "id": "REF-ARCHITECT-PLUS-V3-UPGRADE-EXECUTION-LESSONS",
+      "last_reviewed": "2026-06-26",
+      "load_default": false,
+      "owns_invariants": [],
+      "path": "references/architect-plus-v3-upgrade-execution-lessons.md",
+      "status": "specialist",
+      "superseded_by": null,
+      "supersedes": [],
+      "triggers": [
+        "architect-plus-v3-upgrade",
+        "chip-supergoal-self-upgrade",
+        "path-drift"
+      ]
+    },
+    {
+      "domain": [
+        "architecture"
+      ],
+      "id": "REF-ARCHITECTURE-DECISION-SUPERGOAL",
+      "last_reviewed": "2026-06-25",
+      "load_default": false,
+      "owns_invariants": [],
+      "path": "references/architecture-decision-supergoal.md",
+      "status": "specialist",
+      "superseded_by": null,
+      "supersedes": [],
+      "triggers": [
+        "architecture-decision-supergoal"
+      ]
+    },
+    {
+      "domain": [
+        "artifact"
+      ],
+      "id": "REF-ARTIFACT-BOUNDARIES",
+      "last_reviewed": "2026-06-25",
+      "load_default": true,
+      "owns_invariants": [
+        "INV-LAUNCH-001"
+      ],
+      "path": "references/artifact-boundaries.md",
+      "status": "canonical",
+      "superseded_by": null,
+      "supersedes": [],
+      "triggers": [
+        "artifact-boundaries"
+      ]
+    },
+    {
+      "domain": [
+        "artifact"
+      ],
+      "id": "REF-ARTIFACT-SCHEMAS",
+      "last_reviewed": "2026-06-25",
+      "load_default": true,
+      "owns_invariants": [],
+      "path": "references/artifact-schemas.md",
+      "status": "canonical",
+      "superseded_by": null,
+      "supersedes": [],
+      "triggers": [
+        "artifact-schemas"
+      ]
+    },
+    {
+      "domain": [
+        "auth"
+      ],
+      "id": "REF-AUTH-OAUTH-PROVIDER-AUDIT",
+      "last_reviewed": "2026-06-25",
+      "load_default": false,
+      "owns_invariants": [],
+      "path": "references/auth-oauth-provider-audit.md",
+      "status": "specialist",
+      "superseded_by": null,
+      "supersedes": [],
+      "triggers": [
+        "auth-oauth-provider-audit"
+      ]
+    },
+    {
+      "domain": [
+        "auth"
+      ],
+      "id": "REF-AUTH-UX-POLISH-PHASE",
+      "last_reviewed": "2026-06-25",
+      "load_default": false,
+      "owns_invariants": [],
+      "path": "references/auth-ux-polish-phase.md",
+      "status": "specialist",
+      "superseded_by": null,
+      "supersedes": [],
+      "triggers": [
+        "auth-ux-polish-phase"
+      ]
+    },
+    {
+      "domain": [
+        "bounded"
+      ],
+      "id": "REF-BOUNDED-MANIFEST-NO-INTERNAL-APPROVALS",
+      "last_reviewed": "2026-06-25",
+      "load_default": false,
+      "owns_invariants": [],
+      "path": "references/bounded-manifest-no-internal-approvals.md",
+      "status": "specialist",
+      "superseded_by": null,
+      "supersedes": [],
+      "triggers": [
+        "bounded-manifest-no-internal-approvals"
+      ]
+    },
+    {
+      "domain": [
+        "category"
+      ],
+      "id": "REF-CATEGORY-BACKED-SKILL-PATH-VALIDATION",
+      "last_reviewed": "2026-06-25",
+      "load_default": false,
+      "owns_invariants": [],
+      "path": "references/category-backed-skill-path-validation.md",
+      "status": "specialist",
+      "superseded_by": null,
+      "supersedes": [],
+      "triggers": [
+        "category-backed-skill-path-validation"
+      ]
+    },
+    {
+      "domain": [
+        "context"
+      ],
+      "id": "REF-CONTEXT-ANCHOR-AND-WRONG-GOAL-RECOVERY",
+      "last_reviewed": "2026-06-25",
+      "load_default": false,
+      "owns_invariants": [],
+      "path": "references/context-anchor-and-wrong-goal-recovery.md",
+      "status": "incident",
+      "superseded_by": null,
+      "supersedes": [],
+      "triggers": [
+        "context-anchor-and-wrong-goal-recovery"
+      ]
+    },
+    {
+      "domain": [
+        "core"
+      ],
+      "id": "REF-CORE-PLANNING-CONTRACT",
+      "last_reviewed": "2026-06-25",
+      "load_default": true,
+      "owns_invariants": [],
+      "path": "references/core-planning-contract.md",
+      "status": "canonical",
+      "superseded_by": null,
+      "supersedes": [],
+      "triggers": [
+        "core-planning-contract"
+      ]
+    },
+    {
+      "domain": [
+        "dev"
+      ],
+      "id": "REF-DEV-HISTORY-HARDENING",
+      "last_reviewed": "2026-06-25",
+      "load_default": false,
+      "owns_invariants": [],
+      "path": "references/dev-history-hardening.md",
+      "status": "specialist",
+      "superseded_by": null,
+      "supersedes": [],
+      "triggers": [
+        "dev-history-hardening"
+      ]
+    },
+    {
+      "domain": [
+        "dispatch"
+      ],
+      "id": "REF-DISPATCH-MAP",
+      "last_reviewed": "2026-06-25",
+      "load_default": true,
+      "owns_invariants": [
+        "INV-REFERENCE-001"
+      ],
+      "path": "references/dispatch-map.md",
+      "status": "canonical",
+      "superseded_by": null,
+      "supersedes": [],
+      "triggers": [
+        "dispatch-map"
+      ]
+    },
+    {
+      "domain": [
+        "execution"
+      ],
+      "id": "REF-EXECUTION-STATE-MACHINE",
+      "last_reviewed": "2026-06-25",
+      "load_default": true,
+      "owns_invariants": [
+        "INV-CONTINUE-001",
+        "INV-AUDIT-001",
+        "INV-RECOVERY-001",
+        "INV-BLOCKER-001"
+      ],
+      "path": "references/execution-state-machine.md",
+      "status": "canonical",
+      "superseded_by": null,
+      "supersedes": [],
+      "triggers": [
+        "execution-state-machine"
+      ]
+    },
+    {
+      "domain": [
+        "final"
+      ],
+      "id": "REF-FINAL-AUDIT-PACKAGING",
+      "last_reviewed": "2026-06-25",
+      "load_default": false,
+      "owns_invariants": [],
+      "path": "references/final-audit-packaging.md",
+      "status": "specialist",
+      "superseded_by": null,
+      "supersedes": [],
+      "triggers": [
+        "final-audit-packaging"
+      ]
+    },
+    {
+      "domain": [
+        "gateway"
+      ],
+      "id": "REF-GATEWAY-GOAL-STARTUP-RECOVERY",
+      "last_reviewed": "2026-06-25",
+      "load_default": false,
+      "owns_invariants": [],
+      "path": "references/gateway-goal-startup-recovery.md",
+      "status": "private_profile_only",
+      "superseded_by": null,
+      "supersedes": [],
+      "triggers": [
+        "gateway-goal-startup-recovery"
+      ]
+    },
+    {
+      "domain": [
+        "gateway"
+      ],
+      "id": "REF-GATEWAY-RECOVERY-LEDGER",
+      "last_reviewed": "2026-06-25",
+      "load_default": false,
+      "owns_invariants": [],
+      "path": "references/gateway-recovery-ledger.md",
+      "status": "private_profile_only",
+      "superseded_by": null,
+      "supersedes": [],
+      "triggers": [
+        "gateway-recovery-ledger"
+      ]
+    },
+    {
+      "domain": [
+        "gateway"
+      ],
+      "id": "REF-GATEWAY-RESTART-LIVE-PROOF",
+      "last_reviewed": "2026-06-25",
+      "load_default": false,
+      "owns_invariants": [],
+      "path": "references/gateway-restart-live-proof.md",
+      "status": "private_profile_only",
+      "superseded_by": null,
+      "supersedes": [],
+      "triggers": [
+        "gateway-restart-live-proof"
+      ]
+    },
+    {
+      "domain": [
+        "gateway"
+      ],
+      "id": "REF-GATEWAY-RESTART-PROOF-AND-BOGUS-GOAL",
+      "last_reviewed": "2026-06-25",
+      "load_default": false,
+      "owns_invariants": [],
+      "path": "references/gateway-restart-proof-and-bogus-goal.md",
+      "status": "private_profile_only",
+      "superseded_by": null,
+      "supersedes": [],
+      "triggers": [
+        "gateway-restart-proof-and-bogus-goal"
+      ]
+    },
+    {
+      "domain": [
+        "goal"
+      ],
+      "id": "REF-GOAL-FORMAT",
+      "last_reviewed": "2026-06-25",
+      "load_default": false,
+      "owns_invariants": [],
+      "path": "references/goal-format.md",
+      "status": "specialist",
+      "superseded_by": null,
+      "supersedes": [],
+      "triggers": [
+        "goal-format"
+      ]
+    },
+    {
+      "domain": [
+        "goal"
+      ],
+      "id": "REF-GOAL-IDENTITY-AND-AUDIT-LOOKUP",
+      "last_reviewed": "2026-06-25",
+      "load_default": false,
+      "owns_invariants": [],
+      "path": "references/goal-identity-and-audit-lookup.md",
+      "status": "specialist",
+      "superseded_by": null,
+      "supersedes": [],
+      "triggers": [
+        "goal-identity-and-audit-lookup"
+      ]
+    },
+    {
+      "domain": [
+        "goal"
+      ],
+      "id": "REF-GOAL-STATE-COMPRESSION-MIGRATION",
+      "last_reviewed": "2026-06-25",
+      "load_default": false,
+      "owns_invariants": [],
+      "path": "references/goal-state-compression-migration.md",
+      "status": "specialist",
+      "superseded_by": null,
+      "supersedes": [],
+      "triggers": [
+        "goal-state-compression-migration"
+      ]
+    },
+    {
+      "domain": [
+        "goalmanager"
+      ],
+      "id": "REF-GOALMANAGER-COMPLETION-LOOP-INCIDENTS",
+      "last_reviewed": "2026-06-25",
+      "load_default": false,
+      "owns_invariants": [],
+      "path": "references/goalmanager-completion-loop-incidents.md",
+      "status": "incident",
+      "superseded_by": null,
+      "supersedes": [],
+      "triggers": [
+        "goalmanager-completion-loop-incidents"
+      ]
+    },
+    {
+      "domain": [
+        "goalmanager"
+      ],
+      "id": "REF-GOALMANAGER-RECOVERY",
+      "last_reviewed": "2026-06-25",
+      "load_default": false,
+      "owns_invariants": [],
+      "path": "references/goalmanager-recovery.md",
+      "status": "incident",
+      "superseded_by": null,
+      "supersedes": [],
+      "triggers": [
+        "goalmanager-recovery"
+      ]
+    },
+    {
+      "domain": [
+        "human20"
+      ],
+      "id": "REF-HUMAN20-SEO-AEO-GEO-PLANNING",
+      "last_reviewed": "2026-06-25",
+      "load_default": false,
+      "owns_invariants": [],
+      "path": "references/human20-seo-aeo-geo-planning.md",
+      "status": "private_profile_only",
+      "superseded_by": null,
+      "supersedes": [],
+      "triggers": [
+        "human20-seo-aeo-geo-planning"
+      ]
+    },
+    {
+      "domain": [
+        "ignored"
+      ],
+      "id": "REF-IGNORED-SUPERGOAL-PACKAGE-HYGIENE",
+      "last_reviewed": "2026-06-25",
+      "load_default": false,
+      "owns_invariants": [],
+      "path": "references/ignored-supergoal-package-hygiene.md",
+      "status": "specialist",
+      "superseded_by": null,
+      "supersedes": [],
+      "triggers": [
+        "ignored-supergoal-package-hygiene"
+      ]
+    },
+    {
+      "domain": [
+        "legacy"
+      ],
+      "id": "REF-LEGACY-MONOLITH-2026-06-19",
+      "last_reviewed": "2026-06-25",
+      "load_default": false,
+      "owns_invariants": [],
+      "path": "references/legacy-monolith-2026-06-19.md",
+      "status": "archive",
+      "superseded_by": null,
+      "supersedes": [],
+      "triggers": [
+        "legacy-monolith-2026-06-19"
+      ]
+    },
+    {
+      "domain": [
+        "legacy"
+      ],
+      "id": "REF-LEGACY-SKILL-PHASE-VALIDATION",
+      "last_reviewed": "2026-06-25",
+      "load_default": false,
+      "owns_invariants": [],
+      "path": "references/legacy-skill-phase-validation.md",
+      "status": "specialist",
+      "superseded_by": null,
+      "supersedes": [],
+      "triggers": [
+        "legacy-skill-phase-validation"
+      ]
+    },
+    {
+      "domain": [
+        "live"
+      ],
+      "id": "REF-LIVE-ACTIVATION-CONTINUATION-HARDENING",
+      "last_reviewed": "2026-06-25",
+      "load_default": false,
+      "owns_invariants": [],
+      "path": "references/live-activation-continuation-hardening.md",
+      "status": "specialist",
+      "superseded_by": null,
+      "supersedes": [],
+      "triggers": [
+        "live-activation-continuation-hardening"
+      ]
+    },
+    {
+      "domain": [
+        "loop"
+      ],
+      "id": "REF-LOOP-DESIGN-GATE",
+      "last_reviewed": "2026-06-25",
+      "load_default": true,
+      "owns_invariants": [],
+      "path": "references/loop-design-gate.md",
+      "status": "canonical",
+      "superseded_by": null,
+      "supersedes": [],
+      "triggers": [
+        "loop-design-gate"
+      ]
+    },
+    {
+      "domain": [
+        "manual"
+      ],
+      "id": "REF-MANUAL-PROVIDER-RESOURCE-ADOPTION",
+      "last_reviewed": "2026-06-25",
+      "load_default": false,
+      "owns_invariants": [],
+      "path": "references/manual-provider-resource-adoption.md",
+      "status": "specialist",
+      "superseded_by": null,
+      "supersedes": [],
+      "triggers": [
+        "manual-provider-resource-adoption"
+      ]
+    },
+    {
+      "domain": [
+        "markdown"
+      ],
+      "id": "REF-MARKDOWN-REPORT-SHELL-QUOTING",
+      "last_reviewed": "2026-06-25",
+      "load_default": false,
+      "owns_invariants": [],
+      "path": "references/markdown-report-shell-quoting.md",
+      "status": "specialist",
+      "superseded_by": null,
+      "supersedes": [],
+      "triggers": [
+        "markdown-report-shell-quoting"
+      ]
+    },
+    {
+      "domain": [
+        "model"
+      ],
+      "id": "REF-MODEL-GATEWAY-SUPERGOAL-LIVE-FAILURE",
+      "last_reviewed": "2026-06-25",
+      "load_default": false,
+      "owns_invariants": [],
+      "path": "references/model-gateway-supergoal-live-failure.md",
+      "status": "private_profile_only",
+      "superseded_by": null,
+      "supersedes": [],
+      "triggers": [
+        "model-gateway-supergoal-live-failure"
+      ]
+    },
+    {
+      "domain": [
+        "money"
+      ],
+      "id": "REF-MONEY-SKILL-SAFE-LANE-VS-LIVE-RAIL",
+      "last_reviewed": "2026-06-25",
+      "load_default": false,
+      "owns_invariants": [],
+      "path": "references/money-skill-safe-lane-vs-live-rail.md",
+      "status": "private_profile_only",
+      "superseded_by": null,
+      "supersedes": [],
+      "triggers": [
+        "money-skill-safe-lane-vs-live-rail"
+      ]
+    },
+    {
+      "domain": [
+        "no"
+      ],
+      "id": "REF-NO-INTERNAL-APPROVAL-STANDING-GOAL",
+      "last_reviewed": "2026-06-25",
+      "load_default": false,
+      "owns_invariants": [],
+      "path": "references/no-internal-approval-standing-goal.md",
+      "status": "specialist",
+      "superseded_by": null,
+      "supersedes": [],
+      "triggers": [
+        "no-internal-approval-standing-goal"
+      ]
+    },
+    {
+      "domain": [
+        "old"
+      ],
+      "id": "REF-OLD-SERVER-DECOMMISSION-DRAIN",
+      "last_reviewed": "2026-06-25",
+      "load_default": false,
+      "owns_invariants": [],
+      "path": "references/old-server-decommission-drain.md",
+      "status": "specialist",
+      "superseded_by": null,
+      "supersedes": [],
+      "triggers": [
+        "old-server-decommission-drain"
+      ]
+    },
+    {
+      "domain": [
+        "phase"
+      ],
+      "id": "REF-PHASE-BOUNDARY-STATE-AND-CHARACTERIZATION",
+      "last_reviewed": "2026-06-25",
+      "load_default": false,
+      "owns_invariants": [],
+      "path": "references/phase-boundary-state-and-characterization.md",
+      "status": "specialist",
+      "superseded_by": null,
+      "supersedes": [],
+      "triggers": [
+        "phase-boundary-state-and-characterization"
+      ]
+    },
+    {
+      "domain": [
+        "phase"
+      ],
+      "id": "REF-PHASE-COMPLETION-LEDGER-DISCIPLINE",
+      "last_reviewed": "2026-06-25",
+      "load_default": false,
+      "owns_invariants": [],
+      "path": "references/phase-completion-ledger-discipline.md",
+      "status": "incident",
+      "superseded_by": null,
+      "supersedes": [],
+      "triggers": [
+        "phase-completion-ledger-discipline"
+      ]
+    },
+    {
+      "domain": [
+        "phase"
+      ],
+      "id": "REF-PHASE-DESIGN",
+      "last_reviewed": "2026-06-25",
+      "load_default": false,
+      "owns_invariants": [],
+      "path": "references/phase-design.md",
+      "status": "specialist",
+      "superseded_by": null,
+      "supersedes": [],
+      "triggers": [
+        "phase-design"
+      ]
+    },
+    {
+      "domain": [
+        "phase"
+      ],
+      "id": "REF-PHASE-MARKER-BOOKKEEPING",
+      "last_reviewed": "2026-06-25",
+      "load_default": false,
+      "owns_invariants": [],
+      "path": "references/phase-marker-bookkeeping.md",
+      "status": "specialist",
+      "superseded_by": null,
+      "supersedes": [],
+      "triggers": [
+        "phase-marker-bookkeeping"
+      ]
+    },
+    {
+      "domain": [
+        "planning"
+      ],
+      "id": "REF-PLANNING-DEPTH",
+      "last_reviewed": "2026-06-25",
+      "load_default": false,
+      "owns_invariants": [],
+      "path": "references/planning-depth.md",
+      "status": "specialist",
+      "superseded_by": null,
+      "supersedes": [],
+      "triggers": [
+        "planning-depth"
+      ]
+    },
+    {
+      "domain": [
+        "polymarket"
+      ],
+      "id": "REF-POLYMARKET-LIVE-ACTIVATION-GOAL-CORRECTION",
+      "last_reviewed": "2026-06-25",
+      "load_default": false,
+      "owns_invariants": [],
+      "path": "references/polymarket-live-activation-goal-correction.md",
+      "status": "private_profile_only",
+      "superseded_by": null,
+      "supersedes": [],
+      "triggers": [
+        "polymarket-live-activation-goal-correction"
+      ]
+    },
+    {
+      "domain": [
+        "polymarket"
+      ],
+      "id": "REF-POLYMARKET-PRIVY-LIVE-ACTIVATION-GOALS",
+      "last_reviewed": "2026-06-25",
+      "load_default": false,
+      "owns_invariants": [],
+      "path": "references/polymarket-privy-live-activation-goals.md",
+      "status": "private_profile_only",
+      "superseded_by": null,
+      "supersedes": [],
+      "triggers": [
+        "polymarket-privy-live-activation-goals"
+      ]
+    },
+    {
+      "domain": [
+        "post"
+      ],
+      "id": "REF-POST-DEPLOY-REPAIR-AUDIT",
+      "last_reviewed": "2026-06-25",
+      "load_default": false,
+      "owns_invariants": [],
+      "path": "references/post-deploy-repair-audit.md",
+      "status": "specialist",
+      "superseded_by": null,
+      "supersedes": [],
+      "triggers": [
+        "post-deploy-repair-audit"
+      ]
+    },
+    {
+      "domain": [
+        "process"
+      ],
+      "id": "REF-PROCESS-INTEGRITY-PRODUCTION-RUNS",
+      "last_reviewed": "2026-06-25",
+      "load_default": false,
+      "owns_invariants": [],
+      "path": "references/process-integrity-production-runs.md",
+      "status": "specialist",
+      "superseded_by": null,
+      "supersedes": [],
+      "triggers": [
+        "process-integrity-production-runs"
+      ]
+    },
+    {
+      "domain": [
+        "production"
+      ],
+      "id": "REF-PRODUCTION-DEPLOY-GATES",
+      "last_reviewed": "2026-06-25",
+      "load_default": false,
+      "owns_invariants": [],
+      "path": "references/production-deploy-gates.md",
+      "status": "specialist",
+      "superseded_by": null,
+      "supersedes": [],
+      "triggers": [
+        "production-deploy-gates"
+      ]
+    },
+    {
+      "domain": [
+        "production"
+      ],
+      "id": "REF-PRODUCTION-SAFETY",
+      "last_reviewed": "2026-06-25",
+      "load_default": true,
+      "owns_invariants": [],
+      "path": "references/production-safety.md",
+      "status": "canonical",
+      "superseded_by": null,
+      "supersedes": [],
+      "triggers": [
+        "production-safety"
+      ]
+    },
+    {
+      "domain": [
+        "repeated"
+      ],
+      "id": "REF-REPEATED-APPROVAL-BLOCKED-GOAL-LOOP",
+      "last_reviewed": "2026-06-25",
+      "load_default": false,
+      "owns_invariants": [],
+      "path": "references/repeated-approval-blocked-goal-loop.md",
+      "status": "incident",
+      "superseded_by": null,
+      "supersedes": [],
+      "triggers": [
+        "repeated-approval-blocked-goal-loop"
+      ]
+    },
+    {
+      "domain": [
+        "repeated"
+      ],
+      "id": "REF-REPEATED-COMPLETE-CONTINUATIONS",
+      "last_reviewed": "2026-06-25",
+      "load_default": false,
+      "owns_invariants": [],
+      "path": "references/repeated-complete-continuations.md",
+      "status": "incident",
+      "superseded_by": null,
+      "supersedes": [],
+      "triggers": [
+        "repeated-complete-continuations"
+      ]
+    },
+    {
+      "domain": [
+        "repeated"
+      ],
+      "id": "REF-REPEATED-COMPLETED-WRAPPER-GUARD",
+      "last_reviewed": "2026-06-25",
+      "load_default": false,
+      "owns_invariants": [],
+      "path": "references/repeated-completed-wrapper-guard.md",
+      "status": "incident",
+      "superseded_by": null,
+      "supersedes": [],
+      "triggers": [
+        "repeated-completed-wrapper-guard"
+      ]
+    },
+    {
+      "domain": [
+        "reply"
+      ],
+      "id": "REF-REPLY-MD-GOAL-LAUNCH",
+      "last_reviewed": "2026-06-25",
+      "load_default": false,
+      "owns_invariants": [],
+      "path": "references/reply-md-goal-launch.md",
+      "status": "specialist",
+      "superseded_by": null,
+      "supersedes": [],
+      "triggers": [
+        "reply-md-goal-launch"
+      ]
+    },
+    {
+      "domain": [
+        "repo"
+      ],
+      "id": "REF-REPO-STATE-COMPARISON",
+      "last_reviewed": "2026-06-25",
+      "load_default": false,
+      "owns_invariants": [],
+      "path": "references/repo-state-comparison.md",
+      "status": "specialist",
+      "superseded_by": null,
+      "supersedes": [],
+      "triggers": [
+        "repo-state-comparison"
+      ]
+    },
+    {
+      "domain": [
+        "research"
+      ],
+      "id": "REF-RESEARCH-AND-ARCHITECTURE-GATES",
+      "last_reviewed": "2026-06-25",
+      "load_default": false,
+      "owns_invariants": [],
+      "path": "references/research-and-architecture-gates.md",
+      "status": "specialist",
+      "superseded_by": null,
+      "supersedes": [],
+      "triggers": [
+        "research-and-architecture-gates"
+      ]
+    },
+    {
+      "domain": [
+        "research"
+      ],
+      "id": "REF-RESEARCH-BEFORE-DESIGN",
+      "last_reviewed": "2026-06-25",
+      "load_default": false,
+      "owns_invariants": [],
+      "path": "references/research-before-design.md",
+      "status": "specialist",
+      "superseded_by": null,
+      "supersedes": [],
+      "triggers": [
+        "research-before-design"
+      ]
+    },
+    {
+      "domain": [
+        "research"
+      ],
+      "id": "REF-RESEARCH-REPORT-TO-SUPERGOAL",
+      "last_reviewed": "2026-06-25",
+      "load_default": false,
+      "owns_invariants": [],
+      "path": "references/research-report-to-supergoal.md",
+      "status": "specialist",
+      "superseded_by": null,
+      "supersedes": [],
+      "triggers": [
+        "research-report-to-supergoal"
+      ]
+    },
+    {
+      "domain": [
+        "research"
+      ],
+      "id": "REF-RESEARCH-TO-SKILL-LIBRARY-SUPERGOAL",
+      "last_reviewed": "2026-06-25",
+      "load_default": false,
+      "owns_invariants": [],
+      "path": "references/research-to-skill-library-supergoal.md",
+      "status": "specialist",
+      "superseded_by": null,
+      "supersedes": [],
+      "triggers": [
+        "research-to-skill-library-supergoal"
+      ]
+    },
+    {
+      "domain": [
+        "rollout"
+      ],
+      "id": "REF-ROLLOUT-FINAL-AUDIT-LESSONS",
+      "last_reviewed": "2026-06-25",
+      "load_default": false,
+      "owns_invariants": [],
+      "path": "references/rollout-final-audit-lessons.md",
+      "status": "specialist",
+      "superseded_by": null,
+      "supersedes": [],
+      "triggers": [
+        "rollout-final-audit-lessons"
+      ]
+    },
+    {
+      "domain": [
+        "rpd"
+      ],
+      "id": "REF-RPD-REVIEW-GATES",
+      "last_reviewed": "2026-06-25",
+      "load_default": true,
+      "owns_invariants": [
+        "INV-RPD-001"
+      ],
+      "path": "references/rpd-review-gates.md",
+      "status": "canonical",
+      "superseded_by": null,
+      "supersedes": [],
+      "triggers": [
+        "rpd-review-gates"
+      ]
+    },
+    {
+      "domain": [
+        "rpd"
+      ],
+      "id": "REF-RPD-REVIEWED-SUPERGOAL-LAUNCH",
+      "last_reviewed": "2026-06-25",
+      "load_default": false,
+      "owns_invariants": [],
+      "path": "references/rpd-reviewed-supergoal-launch.md",
+      "status": "specialist",
+      "superseded_by": null,
+      "supersedes": [],
+      "triggers": [
+        "rpd-reviewed-supergoal-launch"
+      ]
+    },
+    {
+      "domain": [
+        "rpd"
+      ],
+      "id": "REF-RPD-TO-SUPERGOAL-HANDOFF",
+      "last_reviewed": "2026-06-25",
+      "load_default": false,
+      "owns_invariants": [],
+      "path": "references/rpd-to-supergoal-handoff.md",
+      "status": "specialist",
+      "superseded_by": null,
+      "supersedes": [],
+      "triggers": [
+        "rpd-to-supergoal-handoff"
+      ]
+    },
+    {
+      "domain": [
+        "skill"
+      ],
+      "id": "REF-SKILL-FEATURE-AUDIT-USER-STORIES",
+      "last_reviewed": "2026-06-25",
+      "load_default": false,
+      "owns_invariants": [],
+      "path": "references/skill-feature-audit-user-stories.md",
+      "status": "specialist",
+      "superseded_by": null,
+      "supersedes": [],
+      "triggers": [
+        "skill-feature-audit-user-stories"
+      ]
+    },
+    {
+      "domain": [
+        "skill"
+      ],
+      "id": "REF-SKILL-MAINTENANCE",
+      "last_reviewed": "2026-06-25",
+      "load_default": true,
+      "owns_invariants": [],
+      "path": "references/skill-maintenance.md",
+      "status": "canonical",
+      "superseded_by": null,
+      "supersedes": [],
+      "triggers": [
+        "skill-maintenance"
+      ]
+    },
+    {
+      "domain": [
+        "skill"
+      ],
+      "id": "REF-SKILL-PACKAGE-SYNC",
+      "last_reviewed": "2026-06-25",
+      "load_default": false,
+      "owns_invariants": [],
+      "path": "references/skill-package-sync.md",
+      "status": "specialist",
+      "superseded_by": null,
+      "supersedes": [],
+      "triggers": [
+        "skill-package-sync"
+      ]
+    },
+    {
+      "domain": [
+        "source"
+      ],
+      "id": "REF-SOURCE-LOCK-RECOVERY",
+      "last_reviewed": "2026-06-25",
+      "load_default": false,
+      "owns_invariants": [],
+      "path": "references/source-lock-recovery.md",
+      "status": "incident",
+      "superseded_by": null,
+      "supersedes": [],
+      "triggers": [
+        "source-lock-recovery"
+      ]
+    },
+    {
+      "domain": [
+        "stale"
+      ],
+      "id": "REF-STALE-PHASE-ROUTE-VERIFICATION",
+      "last_reviewed": "2026-06-25",
+      "load_default": false,
+      "owns_invariants": [],
+      "path": "references/stale-phase-route-verification.md",
+      "status": "specialist",
+      "superseded_by": null,
+      "supersedes": [],
+      "triggers": [
+        "stale-phase-route-verification"
+      ]
+    },
+    {
+      "domain": [
+        "standing"
+      ],
+      "id": "REF-STANDING-GOAL-CONTINUATION-COMPLETION",
+      "last_reviewed": "2026-06-25",
+      "load_default": false,
+      "owns_invariants": [],
+      "path": "references/standing-goal-continuation-completion.md",
+      "status": "incident",
+      "superseded_by": null,
+      "supersedes": [],
+      "triggers": [
+        "standing-goal-continuation-completion"
+      ]
+    },
+    {
+      "domain": [
+        "standing"
+      ],
+      "id": "REF-STANDING-GOAL-CONTINUOUS-EXECUTION-AND-RESTART-R",
+      "last_reviewed": "2026-06-25",
+      "load_default": false,
+      "owns_invariants": [],
+      "path": "references/standing-goal-continuous-execution-and-restart-recovery.md",
+      "status": "incident",
+      "superseded_by": null,
+      "supersedes": [],
+      "triggers": [
+        "standing-goal-continuous-execution-and-restart-recovery"
+      ]
+    },
+    {
+      "domain": [
+        "standing"
+      ],
+      "id": "REF-STANDING-GOAL-DISAMBIGUATION-AND-AUDIT-LOOKUP",
+      "last_reviewed": "2026-06-25",
+      "load_default": false,
+      "owns_invariants": [],
+      "path": "references/standing-goal-disambiguation-and-audit-lookup.md",
+      "status": "specialist",
+      "superseded_by": null,
+      "supersedes": [],
+      "triggers": [
+        "standing-goal-disambiguation-and-audit-lookup"
+      ]
+    },
+    {
+      "domain": [
+        "standing"
+      ],
+      "id": "REF-STANDING-GOAL-FINAL-AUDIT-COMPLETION",
+      "last_reviewed": "2026-06-25",
+      "load_default": false,
+      "owns_invariants": [],
+      "path": "references/standing-goal-final-audit-completion.md",
+      "status": "incident",
+      "superseded_by": null,
+      "supersedes": [],
+      "triggers": [
+        "standing-goal-final-audit-completion"
+      ]
+    },
+    {
+      "domain": [
+        "supergoal"
+      ],
+      "id": "REF-SUPERGOAL-CONTINUATION-AND-PACKAGE-PATH-DRIFT",
+      "last_reviewed": "2026-06-25",
+      "load_default": false,
+      "owns_invariants": [],
+      "path": "references/supergoal-continuation-and-package-path-drift.md",
+      "status": "specialist",
+      "superseded_by": null,
+      "supersedes": [],
+      "triggers": [
+        "supergoal-continuation-and-package-path-drift"
+      ]
+    },
+    {
+      "domain": [
+        "supergoal"
+      ],
+      "id": "REF-SUPERGOAL-GIT-CLEANUP-RESUME",
+      "last_reviewed": "2026-06-25",
+      "load_default": false,
+      "owns_invariants": [],
+      "path": "references/supergoal-git-cleanup-resume.md",
+      "status": "specialist",
+      "superseded_by": null,
+      "supersedes": [],
+      "triggers": [
+        "supergoal-git-cleanup-resume"
+      ]
+    },
+    {
+      "domain": [
+        "supergoal"
+      ],
+      "id": "REF-SUPERGOAL-GOAL-CODE-REVIEW-HARDENING",
+      "last_reviewed": "2026-06-25",
+      "load_default": false,
+      "owns_invariants": [],
+      "path": "references/supergoal-goal-code-review-hardening.md",
+      "status": "specialist",
+      "superseded_by": null,
+      "supersedes": [],
+      "triggers": [
+        "supergoal-goal-code-review-hardening"
+      ]
+    },
+    {
+      "domain": [
+        "supergoal"
+      ],
+      "id": "REF-SUPERGOAL-GOAL-PIPELINE-TURN-YIELD",
+      "last_reviewed": "2026-06-25",
+      "load_default": false,
+      "owns_invariants": [],
+      "path": "references/supergoal-goal-pipeline-turn-yield.md",
+      "status": "specialist",
+      "superseded_by": null,
+      "supersedes": [],
+      "triggers": [
+        "supergoal-goal-pipeline-turn-yield"
+      ]
+    },
+    {
+      "domain": [
+        "supergoal"
+      ],
+      "id": "REF-SUPERGOAL-HERMES-UPDATE-PRESERVATION",
+      "last_reviewed": "2026-06-25",
+      "load_default": false,
+      "owns_invariants": [],
+      "path": "references/supergoal-hermes-update-preservation.md",
+      "status": "specialist",
+      "superseded_by": null,
+      "supersedes": [],
+      "triggers": [
+        "supergoal-hermes-update-preservation"
+      ]
+    },
+    {
+      "domain": [
+        "supergoal"
+      ],
+      "id": "REF-SUPERGOAL-LIVE-RESTART-PROOF",
+      "last_reviewed": "2026-06-25",
+      "load_default": false,
+      "owns_invariants": [],
+      "path": "references/supergoal-live-restart-proof.md",
+      "status": "incident",
+      "superseded_by": null,
+      "supersedes": [],
+      "triggers": [
+        "supergoal-live-restart-proof"
+      ]
+    },
+    {
+      "domain": [
+        "supergoal"
+      ],
+      "id": "REF-SUPERGOAL-REVIEW-ARTIFACT-DELIVERY",
+      "last_reviewed": "2026-06-25",
+      "load_default": false,
+      "owns_invariants": [],
+      "path": "references/supergoal-review-artifact-delivery.md",
+      "status": "specialist",
+      "superseded_by": null,
+      "supersedes": [],
+      "triggers": [
+        "supergoal-review-artifact-delivery"
+      ]
+    },
+    {
+      "domain": [
+        "supergoal"
+      ],
+      "id": "REF-SUPERGOAL-STATUS-SNAPSHOTS",
+      "last_reviewed": "2026-06-25",
+      "load_default": false,
+      "owns_invariants": [],
+      "path": "references/supergoal-status-snapshots.md",
+      "status": "specialist",
+      "superseded_by": null,
+      "supersedes": [],
+      "triggers": [
+        "supergoal-status-snapshots"
+      ]
+    },
+    {
+      "domain": [
+        "telegram"
+      ],
+      "id": "REF-TELEGRAM-BUTTON-GOAL-SESSION-KEY",
+      "last_reviewed": "2026-06-25",
+      "load_default": false,
+      "owns_invariants": [],
+      "path": "references/telegram-button-goal-session-key.md",
+      "status": "private_profile_only",
+      "superseded_by": null,
+      "supersedes": [],
+      "triggers": [
+        "telegram-button-goal-session-key"
+      ]
+    },
+    {
+      "domain": [
+        "telegram"
+      ],
+      "id": "REF-TELEGRAM-DELIVERY-IDEMPOTENCY",
+      "last_reviewed": "2026-06-25",
+      "load_default": false,
+      "owns_invariants": [],
+      "path": "references/telegram-delivery-idempotency.md",
+      "status": "private_profile_only",
+      "superseded_by": null,
+      "supersedes": [],
+      "triggers": [
+        "telegram-delivery-idempotency"
+      ]
+    },
+    {
+      "domain": [
+        "telegram"
+      ],
+      "id": "REF-TELEGRAM-FILE-DELIVERY-IDEMPOTENCY",
+      "last_reviewed": "2026-06-25",
+      "load_default": false,
+      "owns_invariants": [],
+      "path": "references/telegram-file-delivery-idempotency.md",
+      "status": "private_profile_only",
+      "superseded_by": null,
+      "supersedes": [],
+      "triggers": [
+        "telegram-file-delivery-idempotency"
+      ]
+    },
+    {
+      "domain": [
+        "telegram"
+      ],
+      "id": "REF-TELEGRAM-GOAL-KICKOFF-PROMPT-INVARIANT",
+      "last_reviewed": "2026-06-25",
+      "load_default": false,
+      "owns_invariants": [],
+      "path": "references/telegram-goal-kickoff-prompt-invariant.md",
+      "status": "private_profile_only",
+      "superseded_by": null,
+      "supersedes": [],
+      "triggers": [
+        "telegram-goal-kickoff-prompt-invariant"
+      ]
+    },
+    {
+      "domain": [
+        "telegram"
+      ],
+      "id": "REF-TELEGRAM-GOAL-LAUNCH-HARDENING",
+      "last_reviewed": "2026-06-25",
+      "load_default": false,
+      "owns_invariants": [],
+      "path": "references/telegram-goal-launch-hardening.md",
+      "status": "private_profile_only",
+      "superseded_by": null,
+      "supersedes": [],
+      "triggers": [
+        "telegram-goal-launch-hardening"
+      ]
+    },
+    {
+      "domain": [
+        "telegram"
+      ],
+      "id": "REF-TELEGRAM-GOAL-LIVE-VERIFICATION",
+      "last_reviewed": "2026-06-25",
+      "load_default": false,
+      "owns_invariants": [],
+      "path": "references/telegram-goal-live-verification.md",
+      "status": "private_profile_only",
+      "superseded_by": null,
+      "supersedes": [],
+      "triggers": [
+        "telegram-goal-live-verification"
+      ]
+    },
+    {
+      "domain": [
+        "telegram"
+      ],
+      "id": "REF-TELEGRAM-LAUNCH-AND-DELIVERY",
+      "last_reviewed": "2026-06-25",
+      "load_default": true,
+      "owns_invariants": [
+        "INV-DELIVERY-001"
+      ],
+      "path": "references/telegram-launch-and-delivery.md",
+      "status": "canonical",
+      "superseded_by": null,
+      "supersedes": [],
+      "triggers": [
+        "telegram-launch-and-delivery"
+      ]
+    },
+    {
+      "domain": [
+        "telegram"
+      ],
+      "id": "REF-TELEGRAM-LAUNCH-CARD-UX",
+      "last_reviewed": "2026-06-25",
+      "load_default": false,
+      "owns_invariants": [],
+      "path": "references/telegram-launch-card-ux.md",
+      "status": "private_profile_only",
+      "superseded_by": null,
+      "supersedes": [],
+      "triggers": [
+        "telegram-launch-card-ux"
+      ]
+    },
+    {
+      "domain": [
+        "telegram"
+      ],
+      "id": "REF-TELEGRAM-MD-GOAL-LAUNCH-HARDENING",
+      "last_reviewed": "2026-06-25",
+      "load_default": false,
+      "owns_invariants": [],
+      "path": "references/telegram-md-goal-launch-hardening.md",
+      "status": "private_profile_only",
+      "superseded_by": null,
+      "supersedes": [],
+      "triggers": [
+        "telegram-md-goal-launch-hardening"
+      ]
+    },
+    {
+      "domain": [
+        "telegram"
+      ],
+      "id": "REF-TELEGRAM-MD-GOAL-LAUNCH-UX",
+      "last_reviewed": "2026-06-25",
+      "load_default": false,
+      "owns_invariants": [],
+      "path": "references/telegram-md-goal-launch-ux.md",
+      "status": "private_profile_only",
+      "superseded_by": null,
+      "supersedes": [],
+      "triggers": [
+        "telegram-md-goal-launch-ux"
+      ]
+    },
+    {
+      "domain": [
+        "telegram"
+      ],
+      "id": "REF-TELEGRAM-MD-LAUNCH-PIPELINE-HARDENING",
+      "last_reviewed": "2026-06-25",
+      "load_default": false,
+      "owns_invariants": [],
+      "path": "references/telegram-md-launch-pipeline-hardening.md",
+      "status": "private_profile_only",
+      "superseded_by": null,
+      "supersedes": [],
+      "triggers": [
+        "telegram-md-launch-pipeline-hardening"
+      ]
+    },
+    {
+      "domain": [
+        "telegram"
+      ],
+      "id": "REF-TELEGRAM-REVIEW-FILE-DELIVERY-GATE",
+      "last_reviewed": "2026-06-25",
+      "load_default": false,
+      "owns_invariants": [],
+      "path": "references/telegram-review-file-delivery-gate.md",
+      "status": "private_profile_only",
+      "superseded_by": null,
+      "supersedes": [],
+      "triggers": [
+        "telegram-review-file-delivery-gate"
+      ]
+    },
+    {
+      "domain": [
+        "telegram"
+      ],
+      "id": "REF-TELEGRAM-SUPERGOAL-ARTIFACT-DELIVERY-CORRECTION",
+      "last_reviewed": "2026-06-25",
+      "load_default": false,
+      "owns_invariants": [],
+      "path": "references/telegram-supergoal-artifact-delivery-correction.md",
+      "status": "private_profile_only",
+      "superseded_by": null,
+      "supersedes": [],
+      "triggers": [
+        "telegram-supergoal-artifact-delivery-correction"
+      ]
+    },
+    {
+      "domain": [
+        "upstream"
+      ],
+      "id": "REF-UPSTREAM-GOAL-COMPATIBILITY",
+      "last_reviewed": "2026-06-25",
+      "load_default": true,
+      "owns_invariants": [],
+      "path": "references/upstream-goal-compatibility.md",
+      "status": "canonical",
+      "superseded_by": null,
+      "supersedes": [],
+      "triggers": [
+        "upstream-goal-compatibility"
+      ]
+    },
+    {
+      "domain": [
+        "upstream"
+      ],
+      "id": "REF-UPSTREAM-GOAL-RECONCILIATION",
+      "last_reviewed": "2026-06-25",
+      "load_default": false,
+      "owns_invariants": [],
+      "path": "references/upstream-goal-reconciliation.md",
+      "status": "specialist",
+      "superseded_by": null,
+      "supersedes": [],
+      "triggers": [
+        "upstream-goal-reconciliation"
+      ]
+    },
+    {
+      "domain": [
+        "migration"
+      ],
+      "id": "REF-V2-V3-MIGRATION",
+      "last_reviewed": "2026-06-25",
+      "load_default": false,
+      "owns_invariants": [],
+      "path": "references/v2-v3-migration.md",
+      "status": "specialist",
+      "superseded_by": null,
+      "supersedes": [],
+      "triggers": [
+        "migrate-v2",
+        "v2-state-fallback"
+      ]
+    }
+  ]
+}

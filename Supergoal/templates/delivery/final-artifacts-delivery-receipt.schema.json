@@ -1,0 +1,16 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["ok", "sent", "kind", "target", "archive", "hash", "message_id", "sent_at"],
+  "properties": {
+    "ok": {"const": true},
+    "sent": {"const": true},
+    "kind": {"const": "final-artifacts"},
+    "target": {"type": "string", "minLength": 1},
+    "archive": {"type": "string", "minLength": 1},
+    "hash": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "message_id": {"type": "string", "minLength": 1},
+    "sent_at": {"type": "string", "minLength": 1},
+    "extensions": {"type": "object"}
+  }
+}

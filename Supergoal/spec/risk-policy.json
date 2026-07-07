@@ -1,0 +1,127 @@
+{
+  "policy_version": "1.0",
+  "risk_tags": {
+    "archive": {
+      "approval_class": "none",
+      "mandatory_evidence": [
+        "path_safety_tests"
+      ],
+      "required_rpd_focus": [
+        "security"
+      ],
+      "rollback_required": false
+    },
+    "auth": {
+      "approval_class": "none",
+      "mandatory_evidence": [
+        "negative_authorization_fixture"
+      ],
+      "required_rpd_focus": [
+        "security",
+        "integration"
+      ],
+      "rollback_required": false
+    },
+    "control_plane": {
+      "approval_class": "none",
+      "mandatory_evidence": [
+        "state_tests"
+      ],
+      "required_rpd_focus": [
+        "integration"
+      ],
+      "rollback_required": false
+    },
+    "delivery": {
+      "approval_class": "none",
+      "mandatory_evidence": [
+        "receipt_validation"
+      ],
+      "required_rpd_focus": [
+        "security",
+        "integration"
+      ],
+      "rollback_required": false
+    },
+    "gateway": {
+      "approval_class": "production",
+      "mandatory_evidence": [
+        "identity",
+        "restart_proof"
+      ],
+      "required_rpd_focus": [
+        "gateway",
+        "integration"
+      ],
+      "rollback_required": true
+    },
+    "migration": {
+      "approval_class": "destructive-if-live",
+      "mandatory_evidence": [
+        "dry_run",
+        "rollback_proof"
+      ],
+      "required_rpd_focus": [
+        "migration",
+        "data-loss"
+      ],
+      "rollback_required": true
+    },
+    "payments": {
+      "approval_class": "bounded-money",
+      "mandatory_evidence": [
+        "dry_run",
+        "no_live_money_by_default"
+      ],
+      "required_rpd_focus": [
+        "payments",
+        "data-loss"
+      ],
+      "rollback_required": true
+    },
+    "private_data": {
+      "approval_class": "privacy",
+      "mandatory_evidence": [
+        "redaction_evidence"
+      ],
+      "required_rpd_focus": [
+        "security"
+      ],
+      "rollback_required": false
+    },
+    "production": {
+      "approval_class": "production",
+      "mandatory_evidence": [
+        "deploy_status",
+        "logs",
+        "smoke"
+      ],
+      "required_rpd_focus": [
+        "integration"
+      ],
+      "rollback_required": true
+    },
+    "public_launch": {
+      "approval_class": "public-send",
+      "mandatory_evidence": [
+        "publish_approval"
+      ],
+      "required_rpd_focus": [
+        "ux",
+        "integration"
+      ],
+      "rollback_required": true
+    },
+    "recovery": {
+      "approval_class": "none",
+      "mandatory_evidence": [
+        "recovery_fixture"
+      ],
+      "required_rpd_focus": [
+        "integration",
+        "data-loss"
+      ],
+      "rollback_required": false
+    }
+  }
+}

@@ -1,0 +1,116 @@
+{
+  "approvals": [],
+  "architecture": {
+    "source_of_truth": []
+  },
+  "compatibility": {
+    "goalmanager_contract": ">=documented-v2",
+    "research_gate": {
+      "planning_implications": [
+        "Keep security/integration RPD focus on the implementation phase.",
+        "Require unit-test evidence before completion."
+      ],
+      "provider": "perplex",
+      "query": "current safe patterns for auth-adjacent brownfield feature planning with tests",
+      "required": true,
+      "sources": [
+        {
+          "provider": "perplex",
+          "title": "Fixture Perplex research record for supergoal tests",
+          "url": "https://example.com/supergoal-research-fixture"
+        }
+      ],
+      "status": "satisfied",
+      "summary": "Fixture research confirms auth-adjacent brownfield work needs source-of-truth checks, explicit tests, and security-focused review before implementation phases."
+    }
+  },
+  "contract_revision": 1,
+  "decisions": [],
+  "delivery": {
+    "items": []
+  },
+  "goal": {
+    "done_condition": "unit tests pass",
+    "id": "sg-20260625-brownfield-feature",
+    "non_goals": [
+      "production deploy"
+    ],
+    "objective": "Ship one fixture feature with tests",
+    "owner": "chip",
+    "request_digest": "0000000000000000000000000000000000000000000000000000000000000000",
+    "title": "Brownfield feature example",
+    "workspace_root": "."
+  },
+  "loop": {
+    "max_iterations": 3
+  },
+  "phases": [
+    {
+      "commands": [
+        {
+          "command": "python3 -m unittest",
+          "id": "P01-CMD01",
+          "purpose": "prove fixture",
+          "safety": "local_read_write",
+          "timeout_seconds": 120
+        }
+      ],
+      "criteria": [
+        {
+          "blocking": true,
+          "evidence_tier": "direct_artifact",
+          "id": "P01-C01",
+          "statement": "unit fixture test exits 0",
+          "verifier": {
+            "command_id": "P01-CMD01",
+            "expected_assertion": "test passes",
+            "expected_exit": 0,
+            "type": "test"
+          }
+        }
+      ],
+      "deliverables": [
+        {
+          "change_expectation": "created_or_modified",
+          "id": "P01-D01",
+          "kind": "file",
+          "path": "fixture.txt",
+          "verification": "file_hash"
+        }
+      ],
+      "depends_on": [],
+      "id": "P01",
+      "name": "Implement fixture",
+      "ordinal": 1,
+      "risk_tags": [
+        "auth"
+      ],
+      "rpd": {
+        "focus": [
+          "security",
+          "integration"
+        ],
+        "required": true
+      },
+      "task": "Add tested fixture",
+      "work_items": [
+        {
+          "id": "P01-W01",
+          "text": "edit fixture"
+        }
+      ]
+    }
+  ],
+  "profile": "chip-private",
+  "protocol_version": "3.0",
+  "risks": [
+    {
+      "id": "RISK-001",
+      "mitigation": "negative fixture",
+      "severity": "P1",
+      "tag": "auth"
+    }
+  ],
+  "schema_version": "3.0",
+  "source_set": []
+}
