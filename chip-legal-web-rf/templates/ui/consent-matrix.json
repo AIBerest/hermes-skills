@@ -1,0 +1,145 @@
+{
+  "version": "2026-06-26-public-template",
+  "registration": [
+    {
+      "type": "privacy",
+      "required": true,
+      "defaultChecked": false,
+      "label": "I have read the Privacy and Personal Data Policy.",
+      "href": "/legal/privacy",
+      "document": "Privacy Policy",
+      "evidenceToStore": [
+        "userId",
+        "version",
+        "timestamp",
+        "source"
+      ]
+    },
+    {
+      "type": "personal_data",
+      "required": true,
+      "defaultChecked": false,
+      "label": "I consent to personal-data processing for registration and service access.",
+      "href": "/legal/personal-data-consent",
+      "document": "Personal Data Consent",
+      "evidenceToStore": [
+        "userId",
+        "version",
+        "timestamp",
+        "source",
+        "labelHash"
+      ]
+    },
+    {
+      "type": "rules",
+      "required": true,
+      "defaultChecked": false,
+      "label": "I accept the Service Rules.",
+      "href": "/legal/rules",
+      "document": "Service Rules",
+      "evidenceToStore": [
+        "userId",
+        "version",
+        "timestamp",
+        "source"
+      ]
+    },
+    {
+      "type": "ads",
+      "required": false,
+      "defaultChecked": false,
+      "label": "I agree to receive advertising and informational messages.",
+      "href": "/legal/advertising-consent",
+      "document": "Advertising Consent",
+      "evidenceToStore": [
+        "userId",
+        "version",
+        "timestamp",
+        "source",
+        "labelHash"
+      ]
+    }
+  ],
+  "payment": [
+    {
+      "type": "offer",
+      "required": true,
+      "defaultChecked": false,
+      "label": "I accept the Public Offer.",
+      "href": "/legal/offer",
+      "document": "Public Offer",
+      "evidenceToStore": [
+        "userId",
+        "orderId",
+        "version",
+        "timestamp",
+        "source"
+      ]
+    },
+    {
+      "type": "privacy",
+      "required": true,
+      "defaultChecked": false,
+      "label": "I have read the Privacy and Personal Data Policy.",
+      "href": "/legal/privacy",
+      "document": "Privacy Policy",
+      "evidenceToStore": [
+        "userId",
+        "orderId",
+        "version",
+        "timestamp",
+        "source"
+      ]
+    },
+    {
+      "type": "personal_data",
+      "required": true,
+      "defaultChecked": false,
+      "label": "I consent to personal-data processing for order, payment, and access.",
+      "href": "/legal/personal-data-consent",
+      "document": "Personal Data Consent",
+      "evidenceToStore": [
+        "userId",
+        "orderId",
+        "version",
+        "timestamp",
+        "source",
+        "labelHash"
+      ]
+    },
+    {
+      "type": "autopay",
+      "required": "only_when_recurring",
+      "defaultChecked": false,
+      "label": "I agree to recurring charges under the subscription terms.",
+      "href": "/legal/autopay-consent",
+      "document": "Autopay Consent",
+      "evidenceToStore": [
+        "userId",
+        "orderId",
+        "paymentProviderCustomerId",
+        "version",
+        "timestamp",
+        "source",
+        "amount",
+        "period"
+      ]
+    },
+    {
+      "type": "ads",
+      "required": false,
+      "defaultChecked": false,
+      "label": "I agree to receive advertising and informational messages.",
+      "href": "/legal/advertising-consent",
+      "document": "Advertising Consent",
+      "evidenceToStore": [
+        "userId",
+        "orderId",
+        "version",
+        "timestamp",
+        "source",
+        "labelHash"
+      ]
+    }
+  ]
+}
