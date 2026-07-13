@@ -1,0 +1,7 @@
+interface:
+  display_name: "SEO"
+  short_description: "Audit and fix website SEO issues"
+  brand_color: "#0F352B"
+  default_prompt: "Use $seo to audit this landing page for Yandex SEO issues and implement safe fixes."
+policy:
+  allow_implicit_invocation: true

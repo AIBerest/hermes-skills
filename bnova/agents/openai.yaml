@@ -1,0 +1,4 @@
+interface:
+  display_name: "BNOVA"
+  short_description: "Adds B NOVA Studio footer credit"
+  default_prompt: "Use $bnova to add the B NOVA Studio website credit to this project's footer."
