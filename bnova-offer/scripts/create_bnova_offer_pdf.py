@@ -56,6 +56,7 @@ BLUE = colors.HexColor("#0037FF")
 TEXT = colors.HexColor("#16191F")
 MUTED = colors.HexColor("#7C838F")
 SOFT = colors.HexColor("#EEF0F4")
+LINE = colors.HexColor("#DDE1E8")
 DARK = colors.HexColor("#14171D")
 WHITE = colors.white
 
@@ -151,6 +152,30 @@ def soft_note(y, heading, text):
     return y - height - 25
 
 
+def framed_callout(y, heading, rows, note=None):
+    row_height = 19
+    height = 55 + len(rows) * row_height + (18 if note else 0)
+    c.setStrokeColor(BLUE)
+    c.setLineWidth(0.8)
+    c.rect(LEFT, y - height, USABLE, height, stroke=1, fill=0)
+    spaced(heading.upper(), LEFT + 16, y - 22, 6.2, 3.0, BLUE)
+    cy = y - 46
+    for label, value, url in rows:
+        c.setFillColor(MUTED)
+        c.setFont("SansBold", 8.2)
+        c.drawString(LEFT + 16, cy, label)
+        c.setFillColor(BLUE if url else TEXT)
+        c.setFont("SansBold", 10.5)
+        c.drawString(LEFT + 120, cy, value)
+        if url:
+            link_width = stringWidth(value, "SansBold", 10.5)
+            c.linkURL(url, (LEFT + 120, cy - 2, LEFT + 120 + link_width, cy + 12), relative=0)
+        cy -= row_height
+    if note:
+        draw_wrap(note, LEFT + 16, y - height + 19, USABLE - 32, "Sans", 8.2, 11.2, MUTED)
+    return y - height - 32
+
+
 def info_rows(y, heading, rows, note=None):
     row_heights = []
     for _, value, _ in rows:
@@ -173,6 +198,44 @@ def info_rows(y, heading, rows, note=None):
     if note:
         draw_wrap(note, LEFT + 16, y - height + 18, USABLE - 32, "Sans", 8.0, 11.2, MUTED)
     return y - height - 25
+
+
+def line_rows(y, heading, rows):
+    spaced(heading.upper(), LEFT, y, 6.2, 3.0, BLUE)
+    y -= 28
+    c.setStrokeColor(TEXT)
+    c.setLineWidth(0.7)
+    c.line(LEFT, y + 12, RIGHT, y + 12)
+    for label, value, url in rows:
+        c.setFillColor(TEXT)
+        c.setFont("Sans", 9.4)
+        c.drawString(LEFT + 12, y - 5, label)
+        c.setFillColor(BLUE if url else TEXT)
+        c.setFont("SansBold", 9.7)
+        lines = wrap_text(value, "SansBold", 9.7, USABLE * 0.48)
+        value_y = y - 5
+        for line in lines:
+            c.drawRightString(RIGHT - 8, value_y, line)
+            value_y -= 13
+        if url:
+            c.linkURL(url, (RIGHT - USABLE * 0.48, value_y + 1, RIGHT - 8, y + 8), relative=0)
+        row_bottom = min(y - 28, value_y - 7)
+        c.setStrokeColor(LINE)
+        c.setLineWidth(0.6)
+        c.line(LEFT, row_bottom, RIGHT, row_bottom)
+        y = row_bottom - 12
+    return y - 6
+
+
+def blue_side_note(y, heading, text):
+    lines = wrap_text(text, "Sans", 9.2, USABLE - 42)
+    height = 28 + len(lines) * 13
+    c.setStrokeColor(BLUE)
+    c.setLineWidth(1.4)
+    c.line(LEFT, y, LEFT, y - height + 6)
+    spaced(heading.upper(), LEFT + 16, y - 10, 6.0, 3.0, BLUE)
+    draw_wrap(text, LEFT + 16, y - 33, USABLE - 42, "Sans", 9.2, 13.2, colors.HexColor("#474D59"))
+    return y - height - 24
 
 
 def dash_list(y, items):
@@ -220,7 +283,7 @@ def feedback_block(y):
 header("ПЕРЕДАЧА ДОСТУПОВ И МЕСТ ХРАНЕНИЯ")
 y = title(["Передача доступов", "и мест хранения", "ЛР-НСК"])
 y = draw_wrap(
-    "Карта проекта: сайт, админка, GitHub, VPS и домен. В документе нет паролей, токенов, SSH-ключей и 2FA-кодов.",
+    "Рабочая карта проекта: где открыт сайт, где лежат исходники, где управляется VPS и где находится домен. Паролей, токенов, SSH-ключей и 2FA-кодов в документе нет.",
     LEFT,
     y,
     USABLE * 0.70,
@@ -229,31 +292,28 @@ y = draw_wrap(
     15.4,
     TEXT,
 ) - 22
+y = framed_callout(
+    y,
+    "Рабочие ссылки",
+    [
+        ("Сайт", "landrover-nsk.ru", "https://landrover-nsk.ru/"),
+        ("Админка", "landrover-nsk.ru/admin", "https://landrover-nsk.ru/admin/"),
+    ],
+    "Открывайте с компьютера и телефона. Админка нужна только для редактирования сайта.",
+)
+y = section("Основные рабочие адреса", y)
+y = dash_list(
+    y,
+    [
+        "Сайт: публичная страница сервиса ЛР-НСК.",
+        "Админка: панель для правок контента и заявок.",
+        "Пароли и одноразовые коды передаются отдельно, через защищенный канал.",
+    ],
+)
 y = soft_note(
     y,
     "Важно",
-    "Пароли и одноразовые коды передаются отдельно. После приемки стоит сменить пароли в GitHub и Timeweb, проверить резервную почту и включить 2FA.",
-)
-y = section("Основные рабочие адреса", y)
-y = info_rows(
-    y,
-    "Сайт и админка",
-    [
-        ("Сайт", "https://landrover-nsk.ru/", "https://landrover-nsk.ru/"),
-        ("Админка", "https://landrover-nsk.ru/admin/", "https://landrover-nsk.ru/admin/"),
-        ("Для чего", "Публичный сайт и панель редактирования.", None),
-    ],
-)
-y = section("GitHub", y)
-y = info_rows(
-    y,
-    "Копия сайта и логотипы",
-    [
-        ("Профиль", "github.com/NataliaZidkova", "https://github.com/NataliaZidkova/"),
-        ("Вход", "natashazidkova84@gmail.com", None),
-        ("Логотипы", "github.com/NataliaZidkova/.../logos", "https://github.com/NataliaZidkova/lr-nsk-landing/tree/main/logos"),
-        ("Для чего", "Копия сайта, исходные файлы и отдельная папка с логотипами.", None),
-    ],
+    "После приемки смените пароли в GitHub и Timeweb, проверьте резервную почту и включите 2FA там, где она доступна.",
 )
 page_number(1)
 c.showPage()
@@ -261,25 +321,33 @@ c.showPage()
 # Page 2
 header("ИНФРАСТРУКТУРА И ДОМЕН")
 y = title(["Инфраструктура", "где что лежит"])
-y = section("VPS: где работает сайт", y)
-y = info_rows(
+y = line_rows(
     y,
-    "Timeweb Cloud",
+    "GitHub: копия сайта и логотипы",
     [
-        ("Панель", "https://timeweb.cloud/", "https://timeweb.cloud/"),
-        ("Почта", "ol.burtuleva@gmail.com", None),
-        ("Логин", "yk455059", None),
-        ("Для чего", "VPS-сервер. Здесь лежит сайт и отсюда он работает.", None),
+        ("Профиль", "github.com/NataliaZidkova", "https://github.com/NataliaZidkova/"),
+        ("Вход", "natashazidkova84@gmail.com", None),
+        ("Логотипы", "github.com/NataliaZidkova/.../logos", "https://github.com/NataliaZidkova/lr-nsk-landing/tree/main/logos"),
+        ("Назначение", "Копия сайта, исходные файлы и отдельная папка с логотипами.", None),
     ],
 )
-y = section("Домен и DNS", y)
-y = info_rows(
+y = line_rows(
     y,
-    "Timeweb Hosting",
+    "VPS: где работает сайт",
     [
-        ("Панель", "https://hosting.timeweb.ru/", "https://hosting.timeweb.ru/"),
+        ("Панель", "timeweb.cloud", "https://timeweb.cloud/"),
         ("Почта", "ol.burtuleva@gmail.com", None),
-        ("Для чего", "Домен landrover-nsk.ru и настройки DNS.", None),
+        ("Логин", "yk455059", None),
+        ("Назначение", "VPS-сервер. Здесь лежит сайт и отсюда он работает.", None),
+    ],
+)
+y = line_rows(
+    y,
+    "Домен и DNS",
+    [
+        ("Панель", "hosting.timeweb.ru", "https://hosting.timeweb.ru/"),
+        ("Почта", "ol.burtuleva@gmail.com", None),
+        ("Назначение", "Домен landrover-nsk.ru и настройки DNS.", None),
     ],
 )
 y = soft_note(
@@ -324,7 +392,7 @@ y = dash_list(
         "Хранить пароли в менеджере паролей, а не в документах и чатах.",
     ],
 )
-y = soft_note(
+y = blue_side_note(
     y,
     "Финальная пометка",
     "Этот PDF можно отправлять заказчику как карту проекта. Пароли, токены и ключи передаются отдельно и не добавляются в документ.",

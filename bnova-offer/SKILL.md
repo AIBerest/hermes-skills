@@ -31,10 +31,17 @@ Match the B NOVA Studio letterhead:
 - Header: exact saved B NOVA logo on the left, small uppercase document label on the right.
 - Typography: use Noto Sans or a close geometric sans for body/title, bold sans for emphasis, and mono/small uppercase only for labels.
 - Accent: electric blue `#0037FF`; body text near black `#111318`; muted gray `#7D8490`.
-- Layout: large first-page title, sparse sections, lots of air, blue dash list markers, and light-gray blocks for key notes/results.
-- Do not use heavy blue outline boxes as the default. Prefer flat light-gray blocks and clean label/value rows.
+- Layout: large first-page title, sparse sections, lots of air, blue dash list markers, light-gray blocks, thin blue frames, and line-table rows.
+- Use the design patterns intentionally:
+  - Thin blue frame: one primary working/action block, usually on page 1 for the main link, demo, or key artifact.
+  - Light-gray block: result, warning, note, or short explanation that should feel separate from body text.
+  - Blue bold text: important links, numbers, option labels, and 1-3 key words inside a heading.
+  - Line-table rows: access maps, prices, account lists, or comparisons.
+  - Blue left rule: compact final note or "simple math" style takeaway.
+  - Dark block: final B NOVA feedback/contact area only.
+- Do not make every important item a blue frame. The document should alternate quiet text, lists, gray blocks, tables, and one framed working block.
 - Use short en dash `–` only. Never use the long em dash character `U+2014`.
-- Copy must be concrete and operational. Avoid generic AI-sounding text, filler, and vague promises.
+- Copy must be concrete and operational. Avoid generic AI-sounding text, filler, vague promises, and long abstract introductions.
 - If the document is client-facing, include a final dark B NOVA feedback block like the example:
   - left: `Обсудим детали?` plus a short direct sentence
   - right: `B NOVA STUDIO` plus contacts
@@ -71,12 +78,15 @@ The bundled script is a known-good starting point from the LR NSK access handove
 - embedded B NOVA header image
 - Noto Sans / DejaVu-compatible PDF fonts
 - manual word wrapping
-- light-gray accent blocks
+- thin blue framed working block
+- light-gray result/note blocks
+- line-table rows
+- blue left-rule note
 - blue dash list markers
 - clickable links
 - final dark B NOVA feedback block
 
-When adapting it, keep helper functions for `header`, `soft_note`, `info_rows`, `dash_list`, `feedback_block`, and `draw_wrap`.
+When adapting it, keep helper functions for `header`, `framed_callout`, `soft_note`, `line_rows`, `info_rows`, `blue_side_note`, `dash_list`, `feedback_block`, and `draw_wrap`.
 
 Run it with a Python environment that has `reportlab`; in Codex, prefer the bundled workspace Python when available:
 
