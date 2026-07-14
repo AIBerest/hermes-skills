@@ -29,11 +29,15 @@ Match the B NOVA Studio letterhead:
 
 - A4 portrait, white background, generous margins.
 - Header: exact saved B NOVA logo on the left, small uppercase document label on the right.
-- Typography: clean sans for body, bold sans for large title, mono/small uppercase for labels.
+- Typography: use Noto Sans or a close geometric sans for body/title, bold sans for emphasis, and mono/small uppercase only for labels.
 - Accent: electric blue `#0037FF`; body text near black `#111318`; muted gray `#7D8490`.
-- Layout: large first-page title, blue outlined information boxes, sparse sections, lots of air.
-- Footer on every page: `B NOVA STUDIO · РАБОЧИЙ ДОКУМЕНТ · БЕЗ ПАРОЛЕЙ` and page number.
-- If the document is client-facing, include a final B NOVA contact block with:
+- Layout: large first-page title, sparse sections, lots of air, blue dash list markers, and light-gray blocks for key notes/results.
+- Do not use heavy blue outline boxes as the default. Prefer flat light-gray blocks and clean label/value rows.
+- Use short en dash `–` only. Never use the long em dash character `U+2014`.
+- Copy must be concrete and operational. Avoid generic AI-sounding text, filler, and vague promises.
+- If the document is client-facing, include a final dark B NOVA feedback block like the example:
+  - left: `Обсудим детали?` plus a short direct sentence
+  - right: `B NOVA STUDIO` plus contacts
   - `+7 913 004-61-62 · WhatsApp · Telegram`
   - `@E_Berest`
   - `berestenkoea@gmail.com`
@@ -57,7 +61,7 @@ For access-transfer documents, list where access lives and which login/email is 
    - no horizontal overflow
    - contact block fits
    - links and labels are readable
-   - B NOVA header/footer present
+   - B NOVA header and final feedback block present
 7. Rebuild until clean, then report the final PDF path.
 
 ## Implementation Notes
@@ -65,13 +69,14 @@ For access-transfer documents, list where access lives and which login/email is 
 The bundled script is a known-good starting point from the LR NSK access handover document. It includes:
 
 - embedded B NOVA header image
-- DejaVu/Noto-compatible PDF fonts
+- Noto Sans / DejaVu-compatible PDF fonts
 - manual word wrapping
-- blue outline boxes
+- light-gray accent blocks
+- blue dash list markers
 - clickable links
-- final B NOVA contact block
+- final dark B NOVA feedback block
 
-When adapting it, keep helper functions for `header`, `footer`, `box`, `note_box`, `contact_block`, and `draw_wrap`.
+When adapting it, keep helper functions for `header`, `soft_note`, `info_rows`, `dash_list`, `feedback_block`, and `draw_wrap`.
 
 Run it with a Python environment that has `reportlab`; in Codex, prefer the bundled workspace Python when available:
 
@@ -85,6 +90,7 @@ If those variables are not defined, call `codex_app.load_workspace_dependencies`
 
 - PDF opens and renders cleanly.
 - B NOVA logo/header matches the saved asset.
-- Footer and B NOVA contact block are present when client-facing.
+- Final dark B NOVA feedback block is present when client-facing.
 - No password/token/secret values are present.
+- No long em dash character `U+2014` is present.
 - The content answers the user's requested document purpose.
