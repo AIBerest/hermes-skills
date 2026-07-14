@@ -1,0 +1,4 @@
+interface:
+  display_name: "BNOVA Offer"
+  short_description: "Creates B NOVA branded PDF documents"
+  default_prompt: "Use /bnova-offer to create a B NOVA Studio branded PDF document on the saved letterhead."
