@@ -34,7 +34,15 @@ mkdir -p "$out_dir"
 ts="$(date +%Y%m%d-%H%M%S)"
 base="${out_dir}/server-doctor-${host//[^a-zA-Z0-9._-]/_}-${ts}"
 
-ssh_cmd=(ssh -o BatchMode=yes -o ConnectTimeout=10 "$host" 'bash -s')
+ssh_cmd=(
+  ssh
+  -o BatchMode=yes
+  -o ConnectTimeout=10
+  -o RemoteCommand=none
+  -o RequestTTY=no
+  "$host"
+  'bash -s'
+)
 
 run_remote_check() {
   local raw_file="$1"
@@ -94,7 +102,7 @@ fi
 # 4) Firewall
 if command -v ufw >/dev/null 2>&1; then
   st="$(ufw status 2>/dev/null | head -1 || true)"
-  if echo "$st" | grep -qi 'active'; then
+  if [[ "${st,,}" == "status: active" ]]; then
     ok firewall "$st"
   else
     warn firewall "$st"

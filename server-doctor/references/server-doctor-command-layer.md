@@ -22,6 +22,11 @@ Use when the local public docs mirror needs to be refreshed before reviewing Ope
 
 Use `check` before `fix`. Keep output artifacts out of public commits unless they are sanitized examples.
 
+`check` and `preflight` should work with SSH aliases that define their own
+`RemoteCommand`; the command layer disables that alias command for the diagnostic
+session and runs its own read-only shell payload. Firewall status checks must
+match `Status: active` exactly so `Status: inactive` remains a warning.
+
 ## Telegram group agent binding check
 
 ```bash

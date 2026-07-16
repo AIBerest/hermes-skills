@@ -35,6 +35,13 @@ chmod +x "$fake_bin/ssh"
 PATH="$fake_bin:$PATH" \
   "$helper" check example-host "$tmpdir/out" > "$tmpdir/run.log"
 
+grep -q -- "-o RemoteCommand=none" "$helper"
+grep -q -- "-o RequestTTY=no" "$helper"
+if grep -q "grep -qi 'active'" "$helper"; then
+  echo "firewall check must not treat inactive as active" >&2
+  exit 1
+fi
+
 json_report="$(find "$tmpdir/out" -name 'server-doctor-example-host-*.json' | head -1)"
 md_report="$(find "$tmpdir/out" -name 'server-doctor-example-host-*.md' | head -1)"
 
