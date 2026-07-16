@@ -16,6 +16,16 @@ Use this skill to inspect and stabilize hosts that run:
 
 This public version is intentionally generic. It does not assume any specific hostnames, users, IPs, bot usernames, chat IDs, directories, or credentials.
 
+## Private SSOT
+
+For this operator's real infrastructure, the private operational source of truth lives outside this public skill:
+
+- local checkout: `/Users/aiassist/Documents/Github/server-ops-private`
+- private GitHub repo: `AIBerest/server-ops-private`
+- primary map: `topology.md`
+
+Before any real server, bot, gateway, Docker, Nginx/Caddy, Supabase, Telegram, DNS, firewall, or automation operation, read the private `topology.md` first, then use this public skill's runbooks. Do not copy private hostnames, IPs, chat IDs, tokens, `.env` values, SSH config contents, or secret-bearing paths back into public skill docs or public reports.
+
 ## Core rule
 
 Keep `SKILL.md` focused. Read the matching reference before acting.
