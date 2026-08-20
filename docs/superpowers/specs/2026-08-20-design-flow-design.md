@@ -37,7 +37,7 @@ Per-project progress is stored in `docs/design-flow/state.md`. Supporting artifa
 - `DESIGN.md` for the reference lock and design decisions;
 - `docs/design-flow/qa.md` for static visual QA.
 
-The skill itself is developed in the `hermes-skills` repository as `Design-Flow/` and installed into `~/.codex/skills/design-flow/`. The repository copy is the source of truth.
+The skill itself is developed in the `hermes-skills` repository as `design-flow/` and installed into `~/.codex/skills/design-flow/`. The repository copy is the source of truth.
 
 ## State Contract
 
@@ -152,7 +152,7 @@ Use the relevant Impeccable operations: `polish`, `adapt`, `harden`, and `optimi
 The package contains only:
 
 ```text
-Design-Flow/
+design-flow/
 ├── SKILL.md
 └── agents/
     └── openai.yaml
