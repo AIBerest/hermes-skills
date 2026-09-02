@@ -1,6 +1,6 @@
 ---
 name: bnova
-description: Use when the user invokes BNOVA, $bnova, or asks to add the B NOVA Studio website development credit to a site's footer. Adds the text "Разработка сайта - B NOVA Studio" linking to https://bnova.site/ while preserving the existing footer design and project conventions.
+description: Use when the user invokes BNOVA, $bnova, or asks to add the B NOVA website development credit to a site's footer. Adds the text "Разработка сайта - B NOVA" linking to https://bnova.site/ while preserving the existing footer design and project conventions.
 ---
 
 # BNOVA
@@ -10,10 +10,10 @@ description: Use when the user invokes BNOVA, $bnova, or asks to add the B NOVA 
 Add a website development credit to the site's footer:
 
 ```html
-Разработка сайта - <a href="https://bnova.site/" target="_blank" rel="noopener noreferrer">B NOVA Studio</a>
+Разработка сайта - <a href="https://bnova.site/" target="_blank" rel="noopener noreferrer">B NOVA</a>
 ```
 
-Use the exact public text `Разработка сайта - B NOVA Studio`; make `B NOVA Studio` the clickable link to `https://bnova.site/`.
+Use the exact public text `Разработка сайта - B NOVA`; make `B NOVA` the clickable link to `https://bnova.site/`.
 
 ## Workflow
 
@@ -31,9 +31,16 @@ Use the exact public text `Разработка сайта - B NOVA Studio`; mak
 - If there is already an agency/developer credit, update it instead of adding a duplicate.
 - Do not alter unrelated legal text, tracking scripts, forms, or navigation.
 
+## Contact Defaults
+
+- Site: `https://bnova.site/`
+- Phone: `8-983-009-35-32`
+- Email: `info@bnova.site`
+- Telegram: `@E_Berest`
+
 ## Acceptance Criteria
 
-- The footer visibly contains `Разработка сайта - B NOVA Studio`.
-- The `B NOVA Studio` text links to `https://bnova.site/`.
+- The footer visibly contains `Разработка сайта - B NOVA`.
+- The `B NOVA` text links to `https://bnova.site/`.
 - The link opens in a new tab with `rel="noopener noreferrer"`.
 - The implementation follows the existing code style and passes available checks.

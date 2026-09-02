@@ -14,7 +14,7 @@ from reportlab.pdfgen import canvas
 SCRIPT_DIR = Path(__file__).resolve().parent
 SKILL_DIR = SCRIPT_DIR.parent
 
-parser = argparse.ArgumentParser(description="Create a B NOVA Studio branded access handover PDF.")
+parser = argparse.ArgumentParser(description="Create a B NOVA branded access handover PDF.")
 parser.add_argument(
     "--output",
     default="output/pdf/akt-peredachi-dostupov-lr-nsk.pdf",
@@ -62,7 +62,7 @@ WHITE = colors.white
 
 c = canvas.Canvas(str(out), pagesize=A4)
 c.setTitle("Передача доступов и мест хранения - ЛР-НСК")
-c.setAuthor("B NOVA Studio")
+c.setAuthor("B NOVA")
 
 
 def spaced(text, x, y, size=6, tracking=3, color=MUTED, align="left"):
@@ -262,13 +262,13 @@ def feedback_block(y):
     x = RIGHT - 250
     c.setFillColor(WHITE)
     c.setFont("SansBold", 15)
-    c.drawRightString(RIGHT - 30, y - 48, "B NOVA STUDIO")
+    c.drawRightString(RIGHT - 30, y - 48, "B NOVA")
     c.setFillColor(colors.HexColor("#C4C8D0"))
     c.setFont("SansBold", 10.7)
     contact_lines = [
-        ("+7 913 004-61-62 · WhatsApp · Telegram", "tel:+79130046162"),
+        ("8-983-009-35-32 · WhatsApp · Telegram", "tel:+79830093532"),
         ("@E_Berest", "https://t.me/E_Berest"),
-        ("berestenkoea@gmail.com", "mailto:berestenkoea@gmail.com"),
+        ("info@bnova.site", "mailto:info@bnova.site"),
         ("bnova.site", "https://bnova.site/"),
     ]
     cy = y - 80
