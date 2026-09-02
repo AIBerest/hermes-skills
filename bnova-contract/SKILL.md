@@ -37,11 +37,11 @@ For a website or CRM development contract, include:
 8. Limitation of guarantees.
 9. Technological restrictions clause.
 10. Final terms.
-11. Signature block for the main contract.
+11. Full requisites and signature block for the main contract.
 12. Appendix 1: detailed scope, acceptance criteria, exclusions and launch questions.
 13. Signature block at the end of Appendix 1.
 14. Appendix 2: act template.
-15. Requisites and signature block at the end of Appendix 2.
+15. Signature block at the end of Appendix 2.
 
 Every separate contract attachment must end with the parties' signatures. Do not rely on one final signature block for the whole file when the document contains appendices.
 
@@ -83,7 +83,8 @@ Do not name specific platforms, AI tools, code hosts, clouds or SaaS vendors in 
 - Use pale-blue price/summary bands.
 - Use light-gray table rules.
 - Use a two-column requisites/signature block.
-- Put compact two-column signature blocks after the main contract and after each appendix. The act or final appendix should include the full requisites/signature block.
+- Put the full two-column requisites and signature block at the end of the main contract.
+- Put compact two-column signature blocks after each appendix unless the appendix is intended to circulate as a separate standalone document.
 - Keep tables readable with explicit widths, cell padding and no clipped text.
 
 ## Acceptance Check
@@ -93,7 +94,8 @@ Before delivery:
 - Verify the contract number, date, parties, price, payment schedule and term.
 - Verify `НДС не облагается...` appears where tax wording is needed.
 - Verify B NOVA requisites are complete.
-- Verify the main contract and every appendix have their own signature block.
+- Verify the main contract has full requisites and signatures.
+- Verify every appendix has its own signature block.
 - Verify the appendix matches the selected offer or ТЗ.
 - Verify exclusions do not contradict included work.
 - Verify no specific hidden tool/platform dependency is disclosed unless requested.
