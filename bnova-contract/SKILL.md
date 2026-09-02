@@ -36,12 +36,13 @@ For a website or CRM development contract, include:
 7. Acceptance procedure.
 8. Limitation of guarantees.
 9. Technological restrictions clause.
-10. Final terms.
-11. Full requisites and signature block for the main contract.
-12. Appendix 1: detailed scope, acceptance criteria, exclusions and launch questions.
-13. Signature block at the end of Appendix 1.
-14. Appendix 2: act template.
-15. Signature block at the end of Appendix 2.
+10. Electronic correspondence and approvals clause.
+11. Final terms.
+12. Full requisites and signature block for the main contract.
+13. Appendix 1: detailed scope, acceptance criteria, exclusions and launch questions.
+14. Signature block at the end of Appendix 1.
+15. Appendix 2: act template.
+16. Signature block at the end of Appendix 2.
 
 Every separate contract attachment must end with the parties' signatures. Do not rely on one final signature block for the whole file when the document contains appendices.
 
@@ -72,6 +73,21 @@ Use this clause, adapting grammar to the document:
 
 Do not name specific platforms, AI tools, code hosts, clouds or SaaS vendors in this clause unless the user explicitly asks.
 
+## Electronic Correspondence Clause
+
+Add a clause that makes project email, working chats, files, screenshots, scans and photos of signed documents legally meaningful when sender, recipient, date, content and project relation can be identified.
+
+Use wording that covers:
+
+- messages and files in agreed working channels;
+- actual project chats used by both parties, even if the chat was not listed in the original contract;
+- customer replies such as `согласовано`, `утверждаю`, `ок`, `можно запускать`, `принимаю`, `без замечаний` as approval of the relevant page, design, text, setting, stage or document;
+- scans, photos and images of signed acts, appendices, additional agreements and invoices as confirmation until originals are exchanged;
+- a duty to exchange paper originals on request;
+- a short objection period, usually 3 working days, if a party disputes authenticity or authority.
+
+Do not write that any random screenshot is automatically sufficient. Tie legal effect to identifiable sender, content, document, date and project context.
+
 ## B NOVA Layout
 
 - Create an editable `.docx` when the user asks for a contract deliverable.
@@ -99,6 +115,7 @@ Before delivery:
 - Verify the appendix matches the selected offer or ТЗ.
 - Verify exclusions do not contradict included work.
 - Verify no specific hidden tool/platform dependency is disclosed unless requested.
+- Verify the contract recognizes agreed email and working chats as valid project approval channels.
 - Verify no guarantees of positions, traffic, leads or revenue appear.
 - Verify no long em dash `U+2014` appears.
 - Render every DOCX page and visually check for clipping, orphaned headings, split payment tables and broken signature blocks.
