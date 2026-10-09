@@ -36,9 +36,9 @@ class MockMeasurementAdapter:
             source=self.source,
             available=self.available,
             score=self.score,
-            evidence_tier="external_current_source" if self.available else "assumption",
-            confidence="high" if self.available else "low",
-            residual_gap="none" if self.available else f"{self.source} unavailable or not approved",
+            evidence_tier="provided_context" if self.available else "assumption",
+            confidence="low",
+            residual_gap="Synthetic fixture; actual performance remains unmeasured",
             raw={"base_url": base_url, "mode": "mock_offline"},
         )
 

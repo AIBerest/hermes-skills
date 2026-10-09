@@ -11,10 +11,10 @@
   "text_chars_median": 2600,
   "discovery": {
     "https://fixture.test/robots.txt": {
-      "status": 200
+      "status": 403
     },
     "https://fixture.test/sitemap.xml": {
-      "status": 200
+      "status": 404
     },
     "https://fixture.test/llms.txt": {
       "status": 404

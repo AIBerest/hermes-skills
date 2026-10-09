@@ -1,34 +1,26 @@
-# Agent handoff — SEO/AEO/GEO Principal+ skill
+# Installation and optional MCP
 
-This is a **public-clean** Hermes skill bundle. It contains no customer-specific case study, no private Git history, no SuperGoal state, no local paths, and no credentialed analytics data.
+Install as seo-aeo-geo-principal, replacing its previous copy rather than adding a duplicate
+chip-seo-geo-aeo root. Keep backups outside discoverable skill directories.
+Source: AIBerest/hermes-skills, seo-aeo-geo-principal directory.
+Use Python 3.10+ and an isolated environment for requirements.txt.
 
-## Install
+## Optional MCP
 
-Copy the folder into a Hermes skills directory, for example:
+The CLI works without MCP. To expose audit, score and compare as tools:
 
 ```bash
-mkdir -p ~/.hermes/skills
-cp -R seo-aeo-geo-principal-skill ~/.hermes/skills/seo-aeo-geo-principal
+.venv/bin/python -m pip install -r requirements-mcp.txt
+.venv/bin/python scripts/mcp_server.py
 ```
 
-Then reload/list skills in the host agent environment.
-
-## First files to read
-
-1. `SKILL.md` — trigger, workflow, output contract.
-2. `references/principal-plus-rubric.md` — what “Principal+” means.
-3. `references/scoring-model.md` — scorecard row semantics.
-4. `references/measurement-adapters.md` — safe analytics boundaries.
-5. `scripts/seo_audit_cli.py` — CLI entrypoint.
+Configure a local stdio MCP client with absolute interpreter/script paths. The public MCP
+audit does not enable local/private networks, fixes, deployments or credentialed analytics.
+Verify initialize, list_tools and a fixture seo_score call before reporting it connected.
+Installing this skill does not automatically register an MCP server.
 
 ## Verification
 
-```bash
-pip install -r requirements.txt
-bash scripts/test.sh
-python3 scripts/seo_audit_cli.py fixture-report --fixture fixtures/clean-site.json
-```
-
-## Runtime boundary
-
-This bundle is an audit and methodology skill. It does not deploy websites, mutate production, or connect to private analytics by itself.
+PATH="$PWD/.venv/bin:$PATH" bash scripts/test.sh runs offline behavior regressions and the
+real stdio handshake when MCP is installed. Live HTTP smoke is a separate bounded check.
+Generated audits, snapshots, credentials and virtual environments must not be committed.

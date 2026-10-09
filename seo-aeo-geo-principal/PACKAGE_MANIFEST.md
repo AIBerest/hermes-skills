@@ -1,19 +1,8 @@
 # Package manifest
 
-Public-clean export of a SEO/AEO/GEO Principal+ skill.
-
-## Included
-
-- Skill contract and handoff docs.
-- Generalized methodology references.
-- Synthetic fixtures only.
-- Portable Python scripts.
-- Tests and local verification gate.
-
-## Excluded
-
-- Customer/project-specific examples and final audits.
-- Private Git history.
-- SuperGoal state and reports.
-- Local paths and operator identifiers.
-- Credentials, tokens, cookies, dashboards, analytics exports.
+Version 2.1.0; canonical installed name seo-aeo-geo-principal.
+Merged original public-clean baseline, installed pacing/abort controls and Chip 2.0 additions.
+Includes bounded static crawler, 12-dimension scorecard, report/compare/snapshot CLI,
+optional three-tool read-only MCP, fixtures, behavior regressions and measurement references.
+Required: Python 3.10+, requests, beautifulsoup4. Optional: mcp 1.x.
+Generated audits/history, credentials and virtual environments are excluded.

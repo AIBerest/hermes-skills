@@ -4,6 +4,7 @@ from collections import Counter
 from dataclasses import dataclass
 from statistics import median
 from typing import Any
+from urllib.parse import urlparse
 
 
 EVIDENCE_DIRECT = "direct_artifact"
@@ -48,7 +49,7 @@ def _performance_score(audit: dict[str, Any]) -> tuple[int, str, str, str]:
     failure mode where CWV/Lighthouse/PageSpeed is assumed healthy because HTML checks passed.
     """
     perf = _measurement(audit, "performance") or _measurement(audit, "lighthouse") or _measurement(audit, "pagespeed")
-    if perf and perf.get("available"):
+    if perf and perf.get("available") and (perf.get("raw") or {}).get("mode") != "mock_offline":
         raw = perf.get("score")
         try:
             score = int(round(float(raw) * 10 if 0 <= float(raw) <= 1 else float(raw)))
@@ -56,7 +57,7 @@ def _performance_score(audit: dict[str, Any]) -> tuple[int, str, str, str]:
             score = 6
         source = perf.get("source", "measurement")
         return max(0, min(10, score)), f"{source}={raw}", EVIDENCE_EXTERNAL, "high"
-    return int(audit.get("performance_confidence_score") or 6), "CWV/Lighthouse/CrUX unmeasured; conservative confidence", EVIDENCE_ASSUMPTION, "low"
+    return 6, "CWV/Lighthouse/CrUX unmeasured; conservative confidence", EVIDENCE_ASSUMPTION, "low"
 
 
 def _row(
@@ -110,8 +111,15 @@ def compute_scorecard(audit: dict[str, Any]) -> dict[str, Any]:
 
     discovery = audit.get("discovery", {}) or {}
     discovery_status = {k: (v or {}).get("status") for k, v in discovery.items()}
-    discovery_good = sum(1 for s in discovery_status.values() if s == 200)
-    discovery_total = len(discovery_status)
+    core_status = {urlparse(url).path: status for url, status in discovery_status.items()
+                   if urlparse(url).path in {"/robots.txt", "/sitemap.xml"}}
+    robots_status = core_status.get("/robots.txt")
+    sitemap_status = core_status.get("/sitemap.xml")
+    robots_ok = robots_status in (200, 404)
+    discovery_score = (5 if robots_ok else 0) + (5 if sitemap_status == 200 else 1)
+    search_denied = [bot for bot, state in audit.get("crawler_access", {}).items()
+                     if state.get("purpose") == "search" and state.get("robots_allowed") is False]
+    discovery_score = max(0, discovery_score - min(4, len(search_denied)))
 
     type_counts = jsonld_type_counter(audit)
     has_org = type_counts.get("Organization", 0) > 0
@@ -142,19 +150,29 @@ def compute_scorecard(audit: dict[str, Any]) -> dict[str, Any]:
     rows.append(_row("Internal linking", 9 if internal_median >= 15 else 7 if internal_median >= 8 else 5, f"median_internal_links={internal_median}", impact="medium", effort="medium", residual_gap="low internal link graph" if internal_median < 8 else "none"))
     aeo_score = 8 + int(has_faq) + int(has_learning)
     rows.append(_row("AEO answer blocks", min(10, aeo_score), f"FAQPage={type_counts.get('FAQPage', 0)}, learning/video/creative={has_learning}", impact="high", effort="medium", residual_gap="answer/schema blocks thin" if aeo_score < 10 else "none"))
-    rows.append(_row("GEO / agent discovery", 10 if discovery_total and discovery_good >= min(4, discovery_total) else max(5, _ratio_score(discovery_total-discovery_good, discovery_total or 1)), f"discovery_200={discovery_good}/{discovery_total}", impact="high", effort="medium", residual_gap="agent-readable discovery missing" if discovery_good < min(4, discovery_total or 4) else "none"))
+    rows.append(_row("GEO / agent discovery", discovery_score,
+        f"robots_status={robots_status}, sitemap_status={sitemap_status}, search_denied={search_denied}; optional llms/agent endpoints excluded from score",
+        confidence="high" if robots_status is not None and sitemap_status is not None else "low",
+        impact="high", effort="medium",
+        residual_gap="search crawler policy or sitemap needs review" if discovery_score < 10 else "none"))
     entity_score = 6 + int(has_org) + int(has_person) + int(has_website) + int(has_about)
     rows.append(_row("Entity authority", min(10, entity_score), f"Organization={has_org}, Person={has_person}, WebSite={has_website}, AboutPage={has_about}", impact="medium", effort="medium", residual_gap="entity graph incomplete" if entity_score < 10 else "none"))
     rows.append(_row("Image SEO/accessibility", 9 if meaningful_alt_debt == 0 else max(4, 10 - meaningful_alt_debt), f"meaningful_image_alt_debt_pages={meaningful_alt_debt}", impact="medium", effort="low", residual_gap="meaningful image alt debt" if meaningful_alt_debt else "none"))
     perf_score, perf_evidence, perf_tier, perf_confidence = _performance_score(audit)
     rows.append(_row("Performance confidence", perf_score, perf_evidence, evidence_tier=perf_tier, confidence=perf_confidence, impact="high", effort="high", residual_gap="CWV/PageSpeed/CrUX missing" if perf_tier == EVIDENCE_ASSUMPTION else "none"))
 
+    if total == 0:
+        for row in rows:
+            row.update(score=0, confidence="low", evidence_tier=EVIDENCE_ASSUMPTION,
+                       residual_gap="No HTML pages observed; cannot infer readiness", priority=20.0)
     normalized = round(sum(row["score"] for row in rows) / len(rows) * 10)
     return {
         "score": normalized,
         "scorecard": rows,
         "priorities": rank_priorities(rows),
         "jsonld_type_counts": dict(type_counts),
-        "model_version": "2.0-principal-plus",
+        "model_version": "2.2-principal-merged",
+        "metric": "advisory_readiness_not_search_visibility",
+        "limitations": ["Heuristic thresholds, not ranking or citation probabilities", "Optional discovery files do not prove indexing", "Performance and actual citations require separate measurement artifacts"],
         "evidence_tiers": [EVIDENCE_DIRECT, EVIDENCE_CONTEXT, EVIDENCE_EXTERNAL, EVIDENCE_ASSUMPTION],
     }

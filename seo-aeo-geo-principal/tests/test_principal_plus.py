@@ -18,7 +18,7 @@ class PrincipalPlusTests(unittest.TestCase):
 
     def test_scorecard_rows_have_principal_plus_fields(self):
         score = compute_scorecard(self.load_fixture("clean-site.json"))
-        self.assertEqual(score["model_version"], "2.0-principal-plus")
+        self.assertEqual(score["model_version"], "2.2-principal-merged")
         for row in score["scorecard"]:
             for key in ["evidence_tier", "confidence", "impact", "effort", "priority", "residual_gap"]:
                 self.assertIn(key, row)
@@ -30,13 +30,14 @@ class PrincipalPlusTests(unittest.TestCase):
         self.assertEqual(perf["evidence_tier"], "assumption")
         self.assertEqual(perf["confidence"], "low")
 
-    def test_measurement_adapter_can_raise_performance_with_evidence(self):
+    def test_mock_measurement_cannot_raise_real_performance_confidence(self):
         audit = self.load_fixture("clean-site.json")
         merged = merge_measurement(audit, MockMeasurementAdapter("lighthouse", 0.91).fetch("https://fixture.test"))
         score = compute_scorecard(merged)
         perf = [r for r in score["scorecard"] if r["criterion"] == "Performance confidence"][0]
-        self.assertGreaterEqual(perf["score"], 9)
-        self.assertEqual(perf["evidence_tier"], "external_current_source")
+        self.assertEqual(perf["score"], 6)
+        self.assertEqual(perf["evidence_tier"], "assumption")
+        self.assertEqual(perf["confidence"], "low")
 
     def test_fixture_archetypes_trigger_different_priorities(self):
         cases = {

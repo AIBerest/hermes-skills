@@ -7,7 +7,7 @@
 | Field | Meaning |
 |---|---|
 | `criterion` | Scored dimension. |
-| `score` | 0–10 subscore. |
+| `score` | 0-10 subscore. |
 | `evidence` | Compact evidence string. |
 | `evidence_tier` | `direct_artifact`, `provided_context`, `external_current_source`, or `assumption`. |
 | `confidence` | `low`, `medium`, `high`. |
@@ -34,3 +34,9 @@
 ## Conservative performance rule
 
 Without Lighthouse/PageSpeed/CrUX evidence, performance remains low-confidence and conservative. Do not invent a green performance score.
+
+Model `2.2-principal-merged` ignores synthetic mock measurements for real performance confidence.
+Optional llms.txt and agent endpoints do not reduce the discovery score. Core robots/sitemap
+observations and explicit search-bot restrictions inform it instead. Training restrictions
+are not search restrictions. Scores are advisory readiness, not search visibility.
+An audit without successful HTML evidence scores zero with low confidence.

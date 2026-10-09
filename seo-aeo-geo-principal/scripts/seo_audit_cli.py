@@ -8,24 +8,29 @@ from pathlib import Path
 try:
     from seo_scorecard import compute_scorecard
     from report_generator import write_report, render_markdown
-    from seo_live_audit import audit as live_audit
+    from seo_live_audit import CrawlPolicy, audit as live_audit
+    from snapshots import compare, save_snapshot
 except ImportError:  # pragma: no cover
     from scripts.seo_scorecard import compute_scorecard
     from scripts.report_generator import write_report, render_markdown
-    from scripts.seo_live_audit import audit as live_audit
+    from scripts.seo_live_audit import CrawlPolicy, audit as live_audit
+    from scripts.snapshots import compare, save_snapshot
 
 
 def cmd_audit(args: argparse.Namespace) -> int:
-    discovery = args.discovery_path or ["/release.json", "/robots.txt", "/sitemap.xml", "/llms.txt", "/.well-known/mcp.json", "/.well-known/api-catalog", "/.well-known/agent-skills/index.json"]
-    result = live_audit(args.base, discovery, args.max_pages)
+    discovery = args.discovery_path or ["/robots.txt", "/sitemap.xml", "/llms.txt"]
+    policy = CrawlPolicy.for_base(args.base, request_delay=getattr(args, "request_delay", None),
+        max_errors=getattr(args, "max_errors", 3), allow_local=getattr(args, "allow_local", False))
+    result = live_audit(args.base, discovery, args.max_pages, policy=policy)
+    Path(args.output).parent.mkdir(parents=True, exist_ok=True)
     Path(args.output).write_text(json.dumps(result, ensure_ascii=False, indent=2), encoding="utf-8")
     print(json.dumps({"output": args.output, "score": result["score"]["score"], "pages": result["ok_html_count"]}, ensure_ascii=False))
-    return 0
+    return 0 if result.get("crawl_status", "complete") == "complete" else 2
 
 
 def cmd_score(args: argparse.Namespace) -> int:
     data = json.loads(Path(args.input).read_text(encoding="utf-8"))
-    score = data.get("score") if isinstance(data.get("score"), dict) else compute_scorecard(data)
+    score = compute_scorecard(data)
     print(json.dumps(score, ensure_ascii=False, indent=2))
     return 0
 
@@ -39,17 +44,13 @@ def cmd_report(args: argparse.Namespace) -> int:
 def cmd_compare(args: argparse.Namespace) -> int:
     before = json.loads(Path(args.before).read_text(encoding="utf-8"))
     after = json.loads(Path(args.after).read_text(encoding="utf-8"))
-    b = before.get("score", compute_scorecard(before))
-    a = after.get("score", compute_scorecard(after))
-    if isinstance(b, dict):
-        bscore = b["score"]
-    else:
-        bscore = b
-    if isinstance(a, dict):
-        ascore = a["score"]
-    else:
-        ascore = a
-    print(json.dumps({"before": bscore, "after": ascore, "delta": ascore - bscore}, ensure_ascii=False, indent=2))
+    print(json.dumps(compare(before, after), ensure_ascii=False, indent=2))
+    return 0
+
+
+def cmd_snapshot(args: argparse.Namespace) -> int:
+    data = json.loads(Path(args.input).read_text(encoding="utf-8"))
+    print(json.dumps(save_snapshot(data, args.history_dir), ensure_ascii=False))
     return 0
 
 
@@ -68,6 +69,9 @@ def main() -> int:
     p.add_argument("--output", required=True)
     p.add_argument("--max-pages", type=int, default=None)
     p.add_argument("--discovery-path", action="append", default=None)
+    p.add_argument("--request-delay", type=float, default=None)
+    p.add_argument("--max-errors", type=int, default=3)
+    p.add_argument("--allow-local", action="store_true", help="Allow loopback preview only")
     p.set_defaults(func=cmd_audit)
 
     p = sub.add_parser("score")
@@ -88,6 +92,11 @@ def main() -> int:
     p = sub.add_parser("fixture-report")
     p.add_argument("--fixture", required=True)
     p.set_defaults(func=cmd_fixture_report)
+
+    p = sub.add_parser("snapshot")
+    p.add_argument("--input", required=True)
+    p.add_argument("--history-dir", required=True)
+    p.set_defaults(func=cmd_snapshot)
 
     args = parser.parse_args()
     return args.func(args)

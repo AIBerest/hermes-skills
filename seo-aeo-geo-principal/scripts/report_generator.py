@@ -12,7 +12,7 @@ except ImportError:  # pragma: no cover - package import path in tests
 
 
 def render_markdown(audit: dict[str, Any], *, title: str = "SEO/AEO/GEO audit", source: str = "audit-json") -> str:
-    score = audit.get("score") if isinstance(audit.get("score"), dict) else compute_scorecard(audit)
+    score = compute_scorecard(audit)
     priorities = score.get("priorities") or []
     lines = [
         f"# {title}",
@@ -21,6 +21,9 @@ def render_markdown(audit: dict[str, Any], *, title: str = "SEO/AEO/GEO audit", 
         f"Base: `{audit.get('base', 'fixture')}`",
         f"Score: **{score['score']}/100**",
         f"Model: `{score.get('model_version', 'unknown')}`",
+        "Metric: advisory readiness, NOT rankings, indexing, traffic or citation probability.",
+        f"Coverage: `{audit.get('coverage', 'fixture/provided evidence')}`",
+        f"Crawl status: `{audit.get('crawl_status', 'provided evidence')}`; abort reason: `{audit.get('abort_reason') or 'none'}`",
         "",
         "## Scorecard",
         "",
@@ -31,7 +34,7 @@ def render_markdown(audit: dict[str, Any], *, title: str = "SEO/AEO/GEO audit", 
         lines.append("| {criterion} | {score} | {evidence_tier} | {confidence} | {impact} | {effort} | {priority} | {residual_gap} |".format(**row))
     lines += ["", "## Top priorities", ""]
     for row in priorities[:5]:
-        lines.append(f"- `{row['criterion']}` — priority `{row['priority']}`, gap `{row['residual_gap']}`, evidence `{row['evidence']}`")
+        lines.append(f"- `{row['criterion']}` - priority `{row['priority']}`, gap `{row['residual_gap']}`, evidence `{row['evidence']}`")
     lines += ["", "## Residual measurement gaps", ""]
     gaps = [r for r in score["scorecard"] if r.get("residual_gap") and r["residual_gap"] != "none"]
     if gaps:
@@ -39,6 +42,15 @@ def render_markdown(audit: dict[str, Any], *, title: str = "SEO/AEO/GEO audit", 
             lines.append(f"- {row['criterion']}: {row['residual_gap']} ({row['evidence_tier']}, confidence {row['confidence']})")
     else:
         lines.append("- none")
+    if audit.get("crawler_access"):
+        lines += ["", "## Crawler purpose and access", ""]
+        for bot, state in audit["crawler_access"].items():
+            lines.append(f"- {bot}: purpose={state['purpose']}; robots={state['robots_allowed']}; WAF={state['waf_access']}")
+    if audit.get("pages"):
+        lines += ["", "## Content extraction hints (not measured citations)", ""]
+        for page in audit["pages"]:
+            if page.get("extractability"):
+                lines.append(f"- `{page['url']}`: `{page['extractability']}`")
     return "\n".join(lines) + "\n"
 
 
