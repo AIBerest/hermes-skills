@@ -26,6 +26,16 @@ class WriterSkillTests(unittest.TestCase):
             else:
                 self.assertIn(clause, text)
 
+    def test_social_playbook_and_regression_guard(self):
+        text = SKILL.read_text(encoding="utf-8")
+        guide = (ROOT / "references" / "social-writing.md").read_text(encoding="utf-8")
+        for marker in ("version: 0.2.0", "Social writing: Telegram, X, LinkedIn", "truthful hook", "earned ending", "do not assert that the site helps visitors", "references/social-writing.md"):
+            self.assertIn(marker, text)
+        for marker in ("Telegram", "X:", "LinkedIn", "an earned ending", "coreyhaines31/marketingskills", "superamped/ai-marketing-skills"):
+            self.assertIn(marker, guide)
+        self.assertIn("do not fake lived experience", guide)
+        self.assertIn("rather than trimming", guide)
+
     def test_source_baseline(self):
         state = json.loads(STATE.read_text(encoding="utf-8"))
         self.assertEqual(state["url"], "https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing")
