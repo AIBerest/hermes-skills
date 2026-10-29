@@ -1,0 +1,21 @@
+{
+  "url": "https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing",
+  "revision_id": 1382312561,
+  "checked_utc": "2026-10-29",
+  "baseline_sections": [
+    "Caveats",
+    "Content",
+    "Language and grammar",
+    "Style",
+    "Communication intended for the user",
+    "Markup irregularities",
+    "Citations",
+    "Comment-specific indicators",
+    "Edit summaries",
+    "Miscellaneous",
+    "Signs of human writing",
+    "Ineffective indicators",
+    "Historical indicators"
+  ],
+  "policy": "Wiki advice is descriptive, not an AI detector; edit only for relevant, corroborated, material changes."
+}
